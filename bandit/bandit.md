@@ -103,6 +103,11 @@ use gzip -d to unzip it and reveal data8
 file it and if its ascii text, cat data8 and you get;
 The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 
-
+## level 13-14
+commands needed
+ssh, scp, umask, chmod, cat, nc, install
+so you can choose to ssh download the file or cat the contents when you ls and copy and echo it to a file on your machine.
+so ssh bandit14@bandit.labs.overthewire.org -p 2220 -i private.key then cat/etc/bandit_pass/bandit14
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 
 
