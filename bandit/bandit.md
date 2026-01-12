@@ -87,4 +87,22 @@ base64 -d data.txt
 using cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' so A-Z is 26 and the to written twice is 13 + 13
 
 ## level 12-13
+Commands you may need to solve this level
+grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file
+so use cd $(mktemp -d) to create a temp dir in /tmp
+cp to tmp folder
+Use file along the way to check for file-type.
+use xxd -r mystery for the file
+use gzip -d to further decompress
+use bz2 -d to further decompresss
+use tar xvf to further decompresss reveling data5.bin
+use tar xf to reveal data6.bin
+use tar xvf to reveal data8.bin
+file again
+use gzip -d to unzip it and reveal data8
+file it and if its ascii text, cat data8 and you get;
+The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+
+
 
