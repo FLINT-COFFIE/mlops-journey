@@ -87,7 +87,7 @@ base64 -d data.txt
 using cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' so A-Z is 26 and the to written twice is 13 + 13
 
 ## level 12-13
-Commands you may need to solve this level
+Commands you may need to solve this Level
 grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file
 so use cd $(mktemp -d) to create a temp dir in /tmp
 cp to tmp folder
@@ -103,11 +103,20 @@ use gzip -d to unzip it and reveal data8
 file it and if its ascii text, cat data8 and you get;
 The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 
-## level 13-14
+## Level 13-14
 commands needed
 ssh, scp, umask, chmod, cat, nc, install
 so you can choose to ssh download the file or cat the contents when you ls and copy and echo it to a file on your machine.
+Don't forget to chmod 700 on the key.
 so ssh bandit14@bandit.labs.overthewire.org -p 2220 -i private.key then cat/etc/bandit_pass/bandit14
 MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 
+## Level 14-15
+so you login and nc localhost 30000 and input the previous password. You're done.
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+## Level 15 - 16
+while in level 14 openssl s_client -connect localhost:30001 then retrieve the password for level 16 kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+#######################################################
 
