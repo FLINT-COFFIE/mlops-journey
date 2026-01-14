@@ -1,0 +1,17 @@
+# 1. Security (Keep these secret!)
+bandit/private.key
+*.private
+sshkey.private
+
+# 2. Specific TMC/Helsinki Junk
+# This ignores the internal system folders but keeps your project folders
+**/.tmc/
+**/tmcdata/tmcdata/
+**.tmc_project_config
+**.tmc_test_results.json
+
+# 3. Python System Junk
+**/__pycache__/
+*.py[cod]
+
+# (Everything else like .txt, .md, .py, .yaml will be ALLOWED by default)
