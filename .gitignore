@@ -1,17 +1,14 @@
-# 1. Security (Keep these secret!)
-bandit/private.key
-*.private
-sshkey.private
+# Ignore TMC internal grading scripts
+**/tmc/
+**/test/
+**/.tmcproject.yml
+**/.tmc.json
+**/course_config.toml
 
-# 2. Specific TMC/Helsinki Junk
-# This ignores the internal system folders but keeps your project folders
-**/.tmc/
-**/tmcdata/tmcdata/
-**.tmc_project_config
-**.tmc_test_results.json
-
-# 3. Python System Junk
+# Ignore Python cache
 **/__pycache__/
-*.py[cod]
+**/*.pyc
 
-# (Everything else like .txt, .md, .py, .yaml will be ALLOWED by default)
+#Ignore keys
+**/*.key
+**/private.key
