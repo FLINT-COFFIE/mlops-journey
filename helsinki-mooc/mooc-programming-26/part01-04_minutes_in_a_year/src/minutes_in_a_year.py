@@ -5,3 +5,4 @@ DAYS = 365
 HOURS = 24
 mins = DAYS * HOURS * 60
 print(mins)
+#done
