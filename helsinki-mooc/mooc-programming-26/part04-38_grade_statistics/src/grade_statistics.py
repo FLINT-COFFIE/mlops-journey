@@ -46,36 +46,48 @@ def grade(total_points: float):
 # exam in list
 exam_list = []
 exer_list = []
+grad = []
+add = []
+# count
+count = 1
 
 while True:
-    # increase (count)
-    count = 1
-
     # take input
     scores = input("Exam points and exercises completed: ")
 
     # final printout
     if scores == "":
-        print("statistics:")
+        print("Statistics:")
 
         # finding avg
-        avg = (sum(exam_list) + sum(exer_list)) / count
-        pass_perc = (100 / count) * len(add)
+        avg = (sum(exam_list) + sum(exer_list)) / len(exam_list)
+        pass_perc = (len(add) / len(exam_list)) * 100
 
         # displaying the values
         print(f"Points average: {avg:.1f}")
         print(f"Pass percentage: {pass_perc:.1f}")
         print("Grade distribution:")
 
+        for i in range(5, -1, -1):
+            stars = grad.count(i)
+
+            print(f"{i}: {stars * '*'}")
+
         break
 
     # count increment
     exam_toadd, exer_toadd = results(scores)
     exam_list.append(exam_toadd)
-    exer_list.append(exer_toadd / 10)
+    exer_list.append(exer_toadd // 10)
 
-    add = []
-    if exam_toadd >= 10:
-        add.append(exam_toadd)
+    all_points = grade(points(exam_toadd, exer_toadd))
+    if exam_toadd < 10:
+        final = 0
+    else:
+        final = all_points
+    grad.append(final)
+
+    if final > 0:
+        add.append(final)
 
     count += 1
