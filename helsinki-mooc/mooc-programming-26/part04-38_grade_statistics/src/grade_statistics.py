@@ -1,6 +1,6 @@
 # Write your solution here
 # functions
-def results(scores):
+def results(scores: int):
     # separate exams and exercises
     # space = scores.find(" ")
     space = scores.split()
@@ -28,7 +28,7 @@ def points(exam, exercise):
     return total_points
 
 
-def grade(total_points):
+def grade(total_points: float):
     if 0 <= total_points <= 14:
         return 0
     if 15 <= total_points <= 17:
@@ -60,12 +60,22 @@ while True:
 
         # finding avg
         avg = (sum(exam_list) + sum(exer_list)) / count
+        pass_perc = (100 / count) * len(add)
 
+        # displaying the values
         print(f"Points average: {avg:.1f}")
+        print(f"Pass percentage: {pass_perc:.1f}")
+        print("Grade distribution:")
+
+        break
 
     # count increment
     exam_toadd, exer_toadd = results(scores)
     exam_list.append(exam_toadd)
     exer_list.append(exer_toadd / 10)
+
+    add = []
+    if exam_toadd >= 10:
+        add.append(exam_toadd)
 
     count += 1
