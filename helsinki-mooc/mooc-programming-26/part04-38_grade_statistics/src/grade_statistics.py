@@ -43,7 +43,29 @@ def grade(total_points):
         return 5
 
 
+# exam in list
+exam_list = []
+exer_list = []
+
 while True:
+    # increase (count)
+    count = 1
+
+    # take input
     scores = input("Exam points and exercises completed: ")
+
+    # final printout
     if scores == "":
-        print(grade(points(results(scores))))
+        print("statistics:")
+
+        # finding avg
+        avg = (sum(exam_list) + sum(exer_list)) / count
+
+        print(f"Points average: {avg:.1f}")
+
+    # count increment
+    exam_toadd, exer_toadd = results(scores)
+    exam_list.append(exam_toadd)
+    exer_list.append(exer_toadd / 10)
+
+    count += 1
