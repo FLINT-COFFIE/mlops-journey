@@ -14,6 +14,7 @@ def results(scores: int):
 #   print(f"Points average: {}")
 
 
+# defining points
 def points(exam, exercise):
     # exercise points
     total_points = 0
@@ -28,6 +29,7 @@ def points(exam, exercise):
     return total_points
 
 
+# defining grade
 def grade(total_points: float):
     if 0 <= total_points <= 14:
         return 0
@@ -51,6 +53,7 @@ add = []
 # count
 count = 1
 
+# main code block
 while True:
     # take input
     scores = input("Exam points and exercises completed: ")
