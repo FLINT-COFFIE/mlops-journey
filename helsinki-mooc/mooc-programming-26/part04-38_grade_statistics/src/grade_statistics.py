@@ -76,6 +76,7 @@ while True:
 
             print(f"{i}: {stars * '*'}")
 
+        # breaking out of loop
         break
 
     # count increment
