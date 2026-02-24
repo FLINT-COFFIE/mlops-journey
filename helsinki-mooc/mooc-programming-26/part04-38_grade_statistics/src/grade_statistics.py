@@ -83,7 +83,10 @@ while True:
     exam_list.append(exam_toadd)
     exer_list.append(exer_toadd // 10)
 
+    # all points
     all_points = grade(points(exam_toadd, exer_toadd))
+
+    # setting conditionals
     if exam_toadd < 10:
         final = 0
     else:
@@ -93,4 +96,5 @@ while True:
     if final > 0:
         add.append(final)
 
+    # count increment
     count += 1
