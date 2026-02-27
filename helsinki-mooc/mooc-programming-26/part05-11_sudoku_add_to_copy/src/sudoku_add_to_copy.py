@@ -27,21 +27,22 @@ def copy_and_add(sudoku: list, row_no: int, column_no: int, number: int):
     return new_grid
 
 
-sudoku = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-]
+if __name__ == "__main__":
+    sudoku = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ]
 
-grid_copy = copy_and_add(sudoku, 0, 0, 2)
-print("Original:")
-print_sudoku(sudoku)
-print()
-print("Copy:")
-print_sudoku(grid_copy)
+    grid_copy = copy_and_add(sudoku, 0, 0, 2)
+    print("Original:")
+    print_sudoku(sudoku)
+    print()
+    print("Copy:")
+    print_sudoku(grid_copy)
