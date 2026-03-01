@@ -1,15 +1,31 @@
 # Write your solution here
+# dictionary to hold all
+phonebook = {}
+
 # while loop to take commands
-# take input
-# command :int
-# name :
-# number:
+while True:
+    # take input
+    command = int(input("command (1 search, 2 add, 3 quit): "))
+    # command :int
+    if command not in range(1, 4):  # <= 0 or command > 3:
+        continue
 
-# If input is 3 break
+    elif command == 3:
+        break
+    # name :
+    name = input("name: ")
 
-# create 2 functions for each
-# If input is 2 add
+    if command == 2:
+        # number:
+        number = input("number: ")
+        phonebook[name] = number
+        continue
 
-# If input is 1, search
+    elif command == 1:
+        if name in phonebook:
+            print(phonebook[name])
 
-# print("ok!")
+        else:
+            print("no number")
+
+    print("ok!")
