@@ -11,6 +11,7 @@ while True:
         continue
 
     elif command == 3:
+        print("quitting...")
         break
     # name :
     name = input("name: ")
@@ -19,7 +20,7 @@ while True:
         # number:
         number = input("number: ")
         phonebook[name] = number
-        continue
+        print("ok!")
 
     elif command == 1:
         if name in phonebook:
@@ -27,5 +28,3 @@ while True:
 
         else:
             print("no number")
-
-    print("ok!")
