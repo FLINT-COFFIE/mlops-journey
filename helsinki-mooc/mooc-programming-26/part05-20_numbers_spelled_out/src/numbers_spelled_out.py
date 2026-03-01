@@ -23,7 +23,7 @@ def dict_of_numbers():
         15: "fifteen",
         16: "sixteen",
         17: "seventeen",
-        18: "eithteen",
+        18: "eighteen",
         19: "nineteen",
     }
 
@@ -40,16 +40,25 @@ def dict_of_numbers():
     # empty dict
     number = {}
     # using a for loop to add the keys
-    for num in range(0, 20):
+    for num in range(0, 100):
         # break num down and get the word in one variable
         if num < 10:
             number[num] = ones[num]
         elif num < 20:
             number[num] = teens[num]
+        elif num % 10 == 0:
+            number[num] = tens[num]
+        elif num < 100:
+            word = f"{tens[(num // 10) * 10]}-{ones[num % 10]}"
+            number[num] = word
 
     return number
 
 
-numbers = dict_of_numbers()
-print(numbers[2])
-print(numbers[11])
+if __name__ == "__main__":
+    numbers = dict_of_numbers()
+    print(numbers[2])
+    print(numbers[11])
+    print(numbers[45])
+    print(numbers[99])
+    print(numbers[0])
