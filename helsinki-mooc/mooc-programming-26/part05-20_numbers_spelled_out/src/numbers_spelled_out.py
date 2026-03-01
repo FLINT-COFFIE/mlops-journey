@@ -1,6 +1,6 @@
 # Write your solution here
 def dict_of_numbers():
-    #hard code the building blocks
+    # hard code the building blocks
     ones = {
         1: "one",
         2: "two",
@@ -15,34 +15,41 @@ def dict_of_numbers():
     }
 
     teens = {
-        11:"eleven",
-        12:"twelve",
-        13:"thirteen",
-        14:"fourteen",
-        15:"fifteen",
-        16:"sixteen",
-        17:"seventeen",
-        18:"eithteen",
-        19:"nineteen"
+        10: "ten",
+        11: "eleven",
+        12: "twelve",
+        13: "thirteen",
+        14: "fourteen",
+        15: "fifteen",
+        16: "sixteen",
+        17: "seventeen",
+        18: "eithteen",
+        19: "nineteen",
     }
-    
+
     tens = {
-        10:"ten",
-        20:"twenty",
-        30:"thirty",
-        40:"forty",
-        50:"fifty",
-        60:"sixty",
-        70:"seventy",
-        80:"eighty",
-        90:"ninety"
-        
+        20: "twenty",
+        30: "thirty",
+        40: "forty",
+        50: "fifty",
+        60: "sixty",
+        70: "seventy",
+        80: "eighty",
+        90: "ninety",
     }
-    #empty dict
+    # empty dict
     number = {}
-    #using a for loop to add the keys
-    for num in range(0,100):
-        #break num down and get the word in one variable
-        if
-        number[num] = word
-    
+    # using a for loop to add the keys
+    for num in range(0, 20):
+        # break num down and get the word in one variable
+        if num < 10:
+            number[num] = ones[num]
+        elif num < 20:
+            number[num] = teens[num]
+
+    return number
+
+
+numbers = dict_of_numbers()
+print(numbers[2])
+print(numbers[11])
