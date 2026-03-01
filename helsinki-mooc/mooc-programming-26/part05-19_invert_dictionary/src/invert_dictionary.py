@@ -3,10 +3,16 @@ def invert(dictionary: dict):
     inverted = {}
     for key, value in dictionary.items():
         inverted[value] = key
-    return inverted
+
+    dictionary.clear()
+
+    for key, value in inverted.items():
+        dictionary[key] = value
 
 
-s = {1: "first", 2: "second", 3: "third", 4: "fourth"}
+if __name__ == "__main__":
+    s = {1: "first", 2: "second", 3: "third", 4: "fourth"}
 
-print(s)
-print(invert(s))
+    print(s)
+    print(invert(s))
+    print(s)
