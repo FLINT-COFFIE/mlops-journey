@@ -11,7 +11,7 @@ def print_student(students: dict, student: str):
     else:
         if len(students[student]) < 1:
             print(f"{student}:")
-            print("no completed courses")
+            print(" no completed courses")
 
         # PART 2
 
@@ -55,30 +55,28 @@ def summary(students: dict):
             highest = len(values), key
             count = len(values)
 
-        for student in students:
-            grade = 0
+        total_points = 0
+        for course in values:
+            total_points += course[1]
 
-            # name = ""
-            for i in range(len(values)):
-                grade += values[i][1]
-            avg = grade / len(values)
+        students_avg = total_points / len(values)
 
-            if avg > best_avg:
-                best_avg = avg
-                name += student
+        if students_avg > best_avg:
+            best_avg = students_avg
+            best_student_by_course = key
 
     print(f"students {len(students)}")
     print(f"most courses completed {highest[0]} {highest[1]}")
-    print(f"best average grade {best_avg} {student}")
-    print(students)
+    print(f"best average grade {best_avg} {best_student_by_course}")
 
 
-students = {}
-add_student(students, "Peter")
-add_student(students, "Eliza")
-add_course(students, "Peter", ("Data Structures and Algorithms", 1))
-add_course(students, "Peter", ("Introduction to Programming", 1))
-add_course(students, "Peter", ("Advanced Course in Programming", 1))
-add_course(students, "Eliza", ("Introduction to Programming", 5))
-add_course(students, "Eliza", ("Introduction to Computer Science", 4))
-summary(students)
+if __name__ == "__main__":
+    students = {}
+    add_student(students, "Peter")
+    add_student(students, "Eliza")
+    add_course(students, "Peter", ("Data Structures and Algorithms", 1))
+    add_course(students, "Peter", ("Introduction to Programming", 1))
+    add_course(students, "Peter", ("Advanced Course in Programming", 1))
+    add_course(students, "Eliza", ("Introduction to Programming", 5))
+    add_course(students, "Eliza", ("Introduction to Computer Science", 4))
+    summary(students)
