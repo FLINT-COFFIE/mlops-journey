@@ -15,7 +15,8 @@ def read_fruits():
             # append key values and float values
             fruits[fruit] = price
 
-        print(fruits)
+        return fruits
 
 
-read_fruits()
+if __name__ == "__main__":
+    read_fruits()
