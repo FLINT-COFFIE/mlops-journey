@@ -5,6 +5,8 @@
 **/.tmc.json
 **/course_config.toml
 
+**/.vscode
+
 # Ignore Python cache
 **/__pycache__/
 **/*.pyc
