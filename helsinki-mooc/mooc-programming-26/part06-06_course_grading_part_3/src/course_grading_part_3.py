@@ -69,7 +69,9 @@ with open(exam_info) as f:
             sum_exams += int(num)
 
         exam[id] = sum_exams
-
+print(
+    f"{'name':<30}{'exec_nbr':<10}{'exec_pts.':<10}{'exm_pts.':<10}{'tot_pts.':<10}{'grade':<10}"
+)
 for id, name in student.items():
     if id in exam:
         exam_p = exam[id]
@@ -78,7 +80,7 @@ for id, name in student.items():
 
         total_points = exam_p + exercise_p
 
-        if total_points > 0 and total_points <= 14:
+        if total_points >= 0 and total_points <= 14:
             grade = 0
         elif total_points > 14 and total_points <= 17:
             grade = 1
@@ -90,5 +92,7 @@ for id, name in student.items():
             grade = 4
         elif total_points > 27:
             grade = 5
-        print(f"{'name':30} {'exec_nbr':10}")
-        print(f"{name:30} {grade}")
+
+        print(
+            f"{name:<30}{exercise[id]:<10}{exercise_p:<10}{exam_p:<10}{total_points:<10}{grade:<10}"
+        )
