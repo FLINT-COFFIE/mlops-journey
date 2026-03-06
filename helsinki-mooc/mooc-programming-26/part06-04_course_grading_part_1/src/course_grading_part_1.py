@@ -1,7 +1,7 @@
 # write your solution here
 # taking the file inputs
-student_info = "students1.csv"  # input('Enter student info file name: ')
-exercise_info = "exercises1.csv"  # input('Enter exercise info file name: ')
+student_info = input("Enter student info file name: ")
+exercise_info = input("Enter exercise info file name: ")
 
 student = {}
 exercise = {}
