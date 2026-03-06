@@ -6,6 +6,7 @@ exercise_info = input("Enter exercise info file name: ")
 student = {}
 exercise = {}
 
+
 # student info
 with open(student_info) as f:
     # loop through line and split
