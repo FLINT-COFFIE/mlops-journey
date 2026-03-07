@@ -40,4 +40,26 @@ def search_by_name(filename: str, word: str):
     return names
 
 
-search_by_name("recipes1.txt", "cake")
+# define search by time
+def search_by_time(filename: str, prep_time: int):
+    recipes = read(filename)
+    # store names
+    output = []
+    names = []
+    times = []
+    for recipe in recipes:
+        time = int(recipe[1])
+        name = recipe[0]
+        if time <= prep_time:
+            names.append(name)
+            times.append(time)
+    for i in range(len(names)):
+        output.append(f"{names[i]}, preparation time {times[i]} min")
+    return output
+
+
+# search_by_time("recipes1.txt", 20)
+
+if __name__ == "__main__":
+    search_by_name("recipes1.txt", "cake")
+    search_by_time("recipes1.txt", 20)
