@@ -24,26 +24,20 @@ def read(filename: str):
         return recipe_book
 
 
-filename = "recipes2.txt"
-print(read(filename))
-
-
 # def search_by_name(filename:str,word:str):
 def search_by_name(filename: str, word: str):
     book = read(filename)
     word = word.lower()
-    recipies = []
-    for char in book:
-        rec = []
-        if char == " ":
-            continue
-        if word in char.lower():
-            rec.append(char)
-            recipies.append(rec)
-    food_name = []
-    for food in recipies:
-        food_name.append(food[0])
-    # return i (for i in food_name:)
+
+    # store food names
+    names = []
+
+    # loop through recipe
+    for recipe in book:
+        name = recipe[0]
+        if word in name.lower():
+            names.append(name)
+    return names
 
 
-# print(search_by_name("recipes1.txt", "cake"))
+search_by_name("recipes1.txt", "cake")
