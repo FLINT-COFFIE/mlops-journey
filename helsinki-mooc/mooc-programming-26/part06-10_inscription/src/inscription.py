@@ -6,3 +6,4 @@ with open(directory, "w") as my_file:
     my_file.write(
         f"Hi {sign}, we hope you enjoy learning Python with us! Best, Mooc.fi Team"
     )
+# completed
