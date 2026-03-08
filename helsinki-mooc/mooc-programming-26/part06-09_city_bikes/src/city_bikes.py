@@ -50,6 +50,33 @@ def distance(stations: dict, station1: str, station2: str):
     return distance_km
 
 
-stations = get_station_data("stations1.csv")
-d = distance(stations, "Designmuseo", "Hietalahdentori")
-print(d)
+# finding the greatest distance
+def greatest_distance(stations: dict):
+    max_distance = -1
+    station = []
+
+    # populating the list with station names
+    for keys, values in stations.items():
+        station.append(keys)
+
+    # looping through stations
+    for i in range(len(station)):
+        for j in range(i + 1, len(station)):
+            # define readings
+            station1 = station[i]
+            station2 = station[j]
+
+            # finding the distance
+            d = distance(stations, station1, station2)
+
+            # assigning max distance
+            if d > max_distance:
+                max_distance = d
+
+                # getting the two stations
+                first_station = station1
+                second_station = station2
+    print(first_station, second_station, max_distance)
+
+
+greatest_distance(get_station_data("stations1.csv"))
