@@ -18,7 +18,7 @@ def get_station_data(filename: str):
     file_data = read(filename)
     for line in file_data:
         station = line[3]
-        coordinate = (int(line[0]), int(line[1]))
+        coordinate = (float(line[0]), float(line[1]))
         station_data[station] = coordinate
 
     return station_data
