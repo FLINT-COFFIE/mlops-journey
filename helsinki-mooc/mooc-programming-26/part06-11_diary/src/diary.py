@@ -11,10 +11,19 @@ while True:
         print("Bye now!")
         break
 
+    # reading the file
+    elif function == 2:
+        print("Entries: ")
+        with open("diary.txt") as f:
+            for line in f:
+                line = line.strip()
+                print(line)
+
     # adding entries
     elif function == 1:
-        entry = input("Dairy entry: ")
+        entry = input("diary entry: ")
+        print("diary saved")
 
         # open and read the file
-        with open("dairy.txt", "a") as file:
+        with open("diary.txt", "a") as file:
             file.write(entry + "\n")
