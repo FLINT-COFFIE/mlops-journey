@@ -76,7 +76,8 @@ def greatest_distance(stations: dict):
                 # getting the two stations
                 first_station = station1
                 second_station = station2
-    print(first_station, second_station, max_distance)
+    return first_station, second_station, max_distance
 
 
-greatest_distance(get_station_data("stations1.csv"))
+if __name__ == "__main__":
+    greatest_distance(get_station_data("stations1.csv"))
