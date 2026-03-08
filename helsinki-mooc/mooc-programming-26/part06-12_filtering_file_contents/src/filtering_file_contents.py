@@ -1,7 +1,5 @@
 # Write your solution here
 
-# open and pass correct and incorrect files
-
 # fuction to read the files and return dictionary
 def read():
     problem_sets = []
@@ -16,33 +14,46 @@ def read():
 
 # use the function accessor to assess the operation
 def accessor(problem_sets: list):
+    # open and pass correct and incorrect files
+    with open("correct.csv", "w") as f:
+        pass
+    # incorrect
+    with open("incorrect.csv", "w") as f:
+        pass
 
+    # loopint through problem sets
     for profile in problem_sets:
         name = profile[0]
         target = int(profile[2])
         operation = profile[1]
 
-        first_number = ""
-        second_number = ""
         # define operation
-        for i in operation:
-            first_number += i
-            operand = operation[len(first_number)]
-            second_number += operation[len(first_number) + 2 :]
-
-        first_number = int(first_number)
-        second_number = int(second_number)
-
-        if operand == "+":
+        if "+" in operation:
+            parts = operation.split("+")
+            first_number = int(parts[0])
+            second_number = int(parts[1])
             result = first_number + second_number
 
-        elif operand == "-":
+        # subtracting
+        if "-" in operation:
+            parts = operation.split("-")
+            first_number = int(parts[0])
+            second_number = int(parts[1])
             result = first_number - second_number
 
+        # writing to files
         if result == target:
             with open("correct.csv", "a") as f:
-                f.write(f"{name};{operation};{result}")
+                f.write(f"{name};{operation};{result}\n")
 
-        else:
+        elif result != target:
             with open("incorrect.csv", "a") as f:
-                f.write(f"{name};{operation};{result}")
+                f.write(f"{name};{operation};{target}\n")
+
+
+def filter_solutions():
+    accessor(read())
+
+
+if __name__ == "__main__":
+    filter_solutions()
