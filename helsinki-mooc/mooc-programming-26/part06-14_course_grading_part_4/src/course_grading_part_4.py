@@ -2,10 +2,10 @@
 # tee ratkaisu tänne
 # write your solution here
 # taking the file inputs
-student_info = "students2.csv"  # input("Enter student info file name: ")
-exercise_info = "exercises2.csv"  # input("Enter exercise info file name: ")
-exam_info = "exam_points2.csv"  # input("Enter exam file name: ")
-course_info = "course2.txt"  # input("Enter course file: ")
+student_info = input("Enter student info file name: ")
+exercise_info = input("Enter exercise info file name: ")
+exam_info = input("Enter exam file name: ")
+course_info = input("Enter course file: ")
 
 
 student = {}
@@ -91,14 +91,17 @@ with open(exam_info) as f:
         exam[id] = sum_exams
 
 
-print(
-    f"{'name':<30}{'exec_nbr':<10}{'exec_pts.':<10}{'exm_pts.':<10}{'tot_pts.':<10}{'grade':<10}"
-)
+with open("results.txt", "w") as file:
+    first_line = f"{course['name']}, {course['study credits']} credits\n"
+    file.write(first_line)
+    file.write(f"{'=' * (len(first_line) - 1)}\n")
+    file.write(
+        f"{'name':<30}{'exec_nbr':<10}{'exec_pts.':<10}{'exm_pts.':<10}{'tot_pts.':<10}{'grade':<10}\n"
+    )
 
 with open("results.csv", "w") as file:
     pass
-with open("results.txt", "w") as file:
-    pass
+
 
 for id, name in student.items():
     if id in exam:
@@ -121,11 +124,8 @@ for id, name in student.items():
         elif total_points > 27:
             grade = 5
 
-        with open("results.txt", "w") as file:
-            first_line = f"{course['name']}, {course['study credits']} credits\n"
-            file.write(first_line)
-            file.write(f"{'=' * len(first_line)}\n")
-            student_line = f"{name:<30}{exercise[id]:<10}{exercise_p:<10}{exam_p:<10}{total_points:<10}{grade:<10}"
+        with open("results.txt", "a") as file:
+            student_line = f"{name:<30}{exercise[id]:<10}{exercise_p:<10}{exam_p:<10}{total_points:<10}{grade:<10}\n"
             file.write(student_line)
 
         with open("results.csv", "a") as f:
