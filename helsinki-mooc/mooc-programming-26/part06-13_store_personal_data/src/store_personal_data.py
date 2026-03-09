@@ -5,8 +5,9 @@ def store_personal_data(person: tuple):
         file.write(f"{name};{age};{height}\n")
 
 
-# ask for input
-people = "(Paul Paulson; 37; 175.5)"
-# input("input person: ")
-person = people.strip("()")
-person = tuple(person.split(";"))
+if __name__ == "__main__":
+    # ask for input
+    people = "(Paul Paulson; 37; 175.5)"
+    # input("input person: ")
+    person = people.strip("()")
+    person = tuple(person.split(";"))
