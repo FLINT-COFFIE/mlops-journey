@@ -17,5 +17,16 @@ while True:
         eng = input("The word in English")
 
         # add and print dictionary entry added
+        with open("dictionary.txt", "a") as file:
+            file.write(f"{fin} - {eng}")
+
+        print("Dictionary entry added")
 
     # searching
+    if function == 2:
+        search_term = input("Search term: ")
+        # read the file
+        with open("dictionary.txt") as file:
+            for line in file:
+                if search_term in line:
+                    print(line)
