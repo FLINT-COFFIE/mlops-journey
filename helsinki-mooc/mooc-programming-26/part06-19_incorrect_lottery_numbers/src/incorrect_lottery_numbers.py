@@ -14,7 +14,7 @@ def read():
 
 
 # filter the data
-def filter_incorrect(lottery: dict):
+def filter_weeks(lottery: dict):
 
     keys = []
     values = []
@@ -37,4 +37,4 @@ def filter_incorrect(lottery: dict):
     return correct
 
 
-print(filter_incorrect(read()))
+print(filter_weeks(read()))
