@@ -25,13 +25,13 @@ def filter_weeks(lottery: dict):
         keys.append(key)
         values.append(value)
 
-    for key in keys:
-        parts = key.split(" ")
+    for i in range(len(keys)):
+        parts = keys[i].split(" ")
         key_num = parts[1]
 
         try:
             key_num = int(key_num)
-            correct[key] = value
+            correct[keys[i]] = values[i]
         except ValueError:
             continue
     return correct
