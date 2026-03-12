@@ -4,7 +4,7 @@ def new_person(name: str, age: int):
     if " " not in name:
         raise ValueError
 
-    if age > 150:
+    if age > 150 or age < 2:
         raise ValueError
 
     if 2 <= len(name) <= 40:
