@@ -1,9 +1,11 @@
 # Write your solution here
 # read and return dictionary
 def filter_incorrect():
+    with open("correct_numbers.csv", "w") as right:
+        pass
     with open("lottery_numbers.csv") as file:
-        for line in file:
-            line = line.strip()
+        for first_line in file:
+            line = first_line.strip()
             line = line.split(";")
 
             week = line[0]
@@ -51,9 +53,9 @@ def filter_incorrect():
                     bad = True
                     break
 
-                if not bad and len(correct) == 7:
-                    with open("correct_numbers.csv", w) as right:
-                        right.write(line + "\n")
+            if not bad and len(correct) == 7:
+                with open("correct_numbers.csv", "a") as right:
+                    right.write(first_line + "\n")
 
 
 if __name__ == "__main__":
