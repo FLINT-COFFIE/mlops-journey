@@ -36,5 +36,7 @@ def filter_weeks(lottery: dict):
             continue
     return correct
 
+#
+
 
 print(filter_weeks(read()))
