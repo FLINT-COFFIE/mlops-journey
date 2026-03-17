@@ -5,7 +5,7 @@ import random
 
 
 # defining the function
-def generate_password(length: int, dig: bool, spe: bool):
+def generate_strong_password(length: int, dig: bool, spe: bool):
     alphabet = string.ascii_lowercase
     digits = string.digits
     special = "!?=+-()#"
@@ -26,13 +26,21 @@ def generate_password(length: int, dig: bool, spe: bool):
 
         valid = True
 
+        found_lower = False
+
+        for char in password:
+            if char in string.ascii_lowercase:
+                found_lower = True
+        if not found_lower:
+            valid = False
+
         if dig:
             found_dig = False
             for char in password:
                 if char in digits:
                     found_dig = True
 
-            if found_dig == False:
+            if not found_dig:
                 valid = False
 
         if spe:
@@ -41,7 +49,7 @@ def generate_password(length: int, dig: bool, spe: bool):
                 if char in special:
                     found_spe = True
 
-            if found_spe == False:
+            if not found_spe:
                 valid = False
 
         if valid:
@@ -51,4 +59,4 @@ def generate_password(length: int, dig: bool, spe: bool):
 if __name__ == "__main__":
     # testing
     # for i in range(10):
-    print(generate_password(2, False, False))
+    print(generate_strong_password(2, False, False))
