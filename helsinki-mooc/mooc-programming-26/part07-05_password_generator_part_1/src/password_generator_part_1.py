@@ -5,7 +5,7 @@ import random
 
 
 # defining the function
-def password_gen(length: int):
+def generate_password(length: int):
     alphabet = string.ascii_lowercase
 
     password_list = []
@@ -16,6 +16,7 @@ def password_gen(length: int):
     return password
 
 
-# testing
-for i in range(10):
-    print(password_gen(8))
+if __name__ == "__main__":
+    # testing
+    for i in range(10):
+        print(generate_password(8))
