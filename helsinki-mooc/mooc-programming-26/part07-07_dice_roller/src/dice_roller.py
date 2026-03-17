@@ -53,6 +53,7 @@ def play(die1: str, die2: str, times: int):
     return count_1, count_2, count_tie
 
 
-# testing
-for i in range(3):
-    print(roll("A"), " ", end="")
+if __name__ == "__main__":
+    # testing
+    result = play("A", "C", 1000)
+    print(result)
