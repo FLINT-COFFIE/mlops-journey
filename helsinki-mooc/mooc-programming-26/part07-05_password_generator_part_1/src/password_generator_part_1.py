@@ -3,10 +3,14 @@
 from string import *
 from random import *
 
+
 # defining the function
-
-
 def password_gen(length: int):
-    alphabet = string.ascii_lowercase
+    alphabet = ascii_lowercase
     password = sample(alphabet, length)
-    return password
+    return password.join()
+
+
+# testing
+for i in range(10):
+    print(password_gen(8))
