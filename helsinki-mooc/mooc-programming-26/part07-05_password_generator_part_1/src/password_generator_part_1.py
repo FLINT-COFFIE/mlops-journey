@@ -1,14 +1,19 @@
 # Write your solution here
 # importing functions
-from string import *
-from random import *
+import string
+import random
 
 
 # defining the function
 def password_gen(length: int):
-    alphabet = ascii_lowercase
-    password = sample(alphabet, length)
-    return password.join()
+    alphabet = string.ascii_lowercase
+
+    password_list = []
+    for i in range(length):
+        char = random.choice(alphabet)
+        password_list.append(char)
+    password = "".join(password_list)
+    return password
 
 
 # testing
