@@ -24,10 +24,27 @@ def generate_password(length: int, dig: bool, spe: bool):
 
         password = "".join(password_list)
 
-        return password
+        valid = True
+
+        if dig:
+            for char in password:
+                if char in digits:
+                    valid = True
+                else:
+                    valid = False
+
+        if spe:
+            for char in password:
+                if char in special:
+                    valid = True
+                else:
+                    valid = False
+
+        if valid:
+            return password
 
 
 if __name__ == "__main__":
     # testing
     for i in range(10):
-        print(generate_password(8, True, False))
+        print(generate_password(2, False, False))
