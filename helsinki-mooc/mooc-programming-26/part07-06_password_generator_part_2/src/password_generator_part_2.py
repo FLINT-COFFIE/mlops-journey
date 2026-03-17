@@ -5,23 +5,26 @@ import random
 
 
 # defining the function
-def generate_password(length: int, val: bool, val2: bool):
+def generate_password(length: int, dig: bool, spe: bool):
     alphabet = string.ascii_lowercase
     digits = string.digits
-    if val:
+    special = string.punctuation
+
+    if dig:
         alphabet += string.digits
 
-    password_list = []
-    for i in range(length):
-        char = random.choice(alphabet)
-        password_list.append(char)
-    password = "".join(password_list)
+    if spe:
+        alphabet += special
 
-    if val:
-        for i in digits:
-            if i in password:
-                return password
-    return password
+    while True:
+        password_list = []
+
+        for i in range(length):
+            password_list.append(random.choice(alphabet))
+
+        password = "".join(password_list)
+
+        return password
 
 
 if __name__ == "__main__":
