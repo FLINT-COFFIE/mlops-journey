@@ -1,5 +1,6 @@
 # Write your solution here
 # imports
+import random
 
 
 # defining the function
@@ -13,7 +14,13 @@ def words(n: int, beginning: str):
             # condition to fill words
             if word.startswith(beginning):
                 words.append(word)
-    return words
+        try:
+            passwords = random.sample(words, n)
+
+        except len(passwords) < n:
+            raise ValueError
+
+    return passwords
 
 
 # debugging print
