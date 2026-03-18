@@ -14,16 +14,18 @@ def words(n: int, beginning: str):
             # condition to fill words
             if word.startswith(beginning):
                 words.append(word)
-        try:
+
+        if len(words) >= n:
             passwords = random.sample(words, n)
 
-        except len(passwords) < n:
+        else:
             raise ValueError
 
     return passwords
 
 
-# debugging print
-word_list = words(3, "ca")
-for word in word_list:
-    print(word)
+if __name__ == "__main__":
+    # debugging print
+    word_list = words(3, "ca")
+    for word in word_list:
+        print(word)
