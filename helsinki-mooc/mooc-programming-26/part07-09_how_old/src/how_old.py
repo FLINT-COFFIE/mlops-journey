@@ -1,7 +1,14 @@
 # Write your solution here
 from datetime import datetime
 
-time_now = datetime.now()
-midnight = datetime(2021, 6, 30)
-difference = midnight - time_now
-print(f"Midnight is still {difference.seconds} seconds away")
+day = int(input("Day: "))
+month = int(input("Month: "))
+year = int(input("Year: "))
+
+date_of_birth = datetime(year, month, day)
+millenium = datetime(2000, 1, 1)
+
+age = millenium - date_of_birth
+
+if age >= 0:
+    print(age)
