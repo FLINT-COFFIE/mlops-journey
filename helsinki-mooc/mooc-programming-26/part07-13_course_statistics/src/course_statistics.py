@@ -55,11 +55,10 @@ def retrieve_course(course_name: str):
 
     # defining variables
     weeks = len(course_info)
-    
+
     students = []
     hours = []
     exercises = []
-    
 
     # updating dictionary
     final_info["weeks"] = weeks
@@ -67,13 +66,24 @@ def retrieve_course(course_name: str):
     for week in course_info:
         students.append(course_info[week]["students"])
         hours.append(course_info[week]["hour_total"])
-        exercises..append(course_info[week]["exercise_total"])
-        
-    
-    #final values    
+        exercises.append(course_info[week]["exercise_total"])
+
+    # final values
     max_students = max(students)
     hours_average = sum(hours) // max_students
     exercises_average = sum(exercises) // max_students
+
+    # updating final_info
+    final_info["students"] = max_students
+    final_info["hours"] = sum(hours)
+    final_info["hours_average"] = hours_average
+    final_info["exercises"] = sum(exercises)
+    final_info["exercises_average"] = exercises_average
+
+    # returning final info
+    return final_info
+    # print(final_info)
+
 
 # testing
 if __name__ == "__main__":
