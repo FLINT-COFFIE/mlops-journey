@@ -3,15 +3,16 @@
 from datetime import *
 
 # asking for inputs
-filename = "late_june.txt"  # input("Filename: ")
-str_date = "24.06.2020"  # input("Starting date: ")
-no_of_days = 5  # int(input("How many days: "))
+filename = input("Filename: ")
+str_date = input("Starting date: ")
+no_of_days = int(input("How many days: "))
 
 # calculated reformatting
 timedelta_days = timedelta(days=no_of_days - 1)
 
 # reformatting data types
 start_date = datetime.strptime(str_date, "%d.%m.%Y")
+str_start_date = start_date.strftime("%d.%m.%Y")
 end_date = start_date + timedelta_days
 str_end_date = end_date.strftime("%d.%m.%Y")
 end_date = datetime.strptime(str_end_date, "%d.%m.%Y")
@@ -26,7 +27,7 @@ print("Please type in screen time in minutes on each day (TV computer mobile):\n
 
 # writing to file
 with open(filename, "w") as file:
-    file.write(f"Time period: {str_date}-{str_end_date}\n")
+    file.write(f"Time period: {str_start_date}-{str_end_date}\n")
 
     mins = []
     keys = {}
@@ -44,7 +45,8 @@ with open(filename, "w") as file:
         # split screen_time
 
     total_minutes = sum(mins)
-    avarage = total_minutes / len(mins)
+
+    avarage = total_minutes / no_of_days
 
     file.write(f"Total minutes: {total_minutes}\n")
     file.write(f"Average minutes: {avarage}\n")
