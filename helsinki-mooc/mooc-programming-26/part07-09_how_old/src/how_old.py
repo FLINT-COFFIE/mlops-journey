@@ -1,6 +1,8 @@
 # Write your solution here
-# imports
-from datetime import *
+from datetime import datetime
 
-my_time = datetime.now()
-print(my_time)
+time_now = datetime.now()
+midsummer = datetime(2021, 6, 26)
+
+difference = midsummer - time_now
+print("Midsummer is", difference, "days away")
