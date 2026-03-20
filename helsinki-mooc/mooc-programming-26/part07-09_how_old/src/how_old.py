@@ -10,5 +10,8 @@ millenium = datetime(2000, 1, 1)
 
 age = millenium - date_of_birth
 
-if age >= 0:
+if age > 0:
     print(age)
+
+else:
+    print("You weren't born yet on the eve of the new millennium.")
