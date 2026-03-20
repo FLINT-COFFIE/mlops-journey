@@ -6,7 +6,7 @@ month = int(input("Month: "))
 year = int(input("Year: "))
 
 date_of_birth = datetime(year, month, day)
-millenium = datetime(2000, 1, 1)
+millenium = datetime(1999, 12, 31)
 
 age = millenium - date_of_birth
 
