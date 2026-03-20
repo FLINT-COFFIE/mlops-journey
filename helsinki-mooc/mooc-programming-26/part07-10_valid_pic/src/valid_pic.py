@@ -11,7 +11,7 @@ def is_it_valid(pic: str):
     control_characters = "0123456789ABCDEFHJKLMNPRSTUVWXY"
 
     # early gate keeping
-    if len(pic) < 11 or pic[6] not in century_markers:
+    if len(pic) != 11 or pic[6] not in century_markers:
         return False
 
     try:
@@ -59,5 +59,8 @@ def is_it_valid(pic: str):
         return False
 
 
-# testing
-print(is_it_valid("230827-906F"))
+if __name__ == "__main__":
+    # testing
+    print(is_it_valid("230827-906F"))
+    print(is_it_valid("120488+246L"))
+    print(is_it_valid("310823A9877"))
