@@ -20,6 +20,7 @@ def print_persons(filename: str):
         print(f"{name} {age} years ({hobbies})")
 
 
-filename = "file1.json"  # input("Filename: ")
+if __name__ == "__main__":
+    filename = "file1.json"  # input("Filename: ")
 
-print_persons(filename)
+    print_persons(filename)
