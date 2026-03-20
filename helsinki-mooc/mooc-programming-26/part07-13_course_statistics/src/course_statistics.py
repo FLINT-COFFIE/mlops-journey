@@ -1,10 +1,10 @@
 # Write your solution here
 # reading json files
-"""import urllib.request
+# import urllib.request
+# my_request = urllib.request.urlopen("https://helsinki.fi")
+# print(my_request.read())
 
-my_request = urllib.request.urlopen("https://helsinki.fi")
-print(my_request.read())
-"""
+### Part 1
 
 # importing json
 import json
@@ -25,7 +25,7 @@ def retrieve_all():
     for course in courses:
         if course["enabled"]:
             enabled_courses.append(course)
-    print(enabled_courses)
+    # print(enabled_courses)
 
     for course in enabled_courses:
         course_info = (
@@ -35,7 +35,25 @@ def retrieve_all():
             sum(course["exercises"]),
         )
         final_list.append(course_info)
-    print(final_list)
+    return final_list
 
 
-retrieve_all()
+### Part 2
+
+
+def retrieve_course(course_name: str):
+    site_info = (
+        f"https://studies.cs.helsinki.fi/stats-mock/api/courses/{course_name}/stats"
+    )
+    my_request = urllib.request.urlopen(site_info)
+    data = my_request.read()
+
+    course_info = json.loads(data)
+
+    return course_info
+
+
+# testing
+if __name__ == "__main__":
+    retrieve_all()
+    retrieve_course("docker2019")
