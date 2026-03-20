@@ -50,8 +50,30 @@ def retrieve_course(course_name: str):
 
     course_info = json.loads(data)
 
-    return course_info
+    # print(course_info)
+    final_info = {}
 
+    # defining variables
+    weeks = len(course_info)
+    
+    students = []
+    hours = []
+    exercises = []
+    
+
+    # updating dictionary
+    final_info["weeks"] = weeks
+
+    for week in course_info:
+        students.append(course_info[week]["students"])
+        hours.append(course_info[week]["hour_total"])
+        exercises..append(course_info[week]["exercise_total"])
+        
+    
+    #final values    
+    max_students = max(students)
+    hours_average = sum(hours) // max_students
+    exercises_average = sum(exercises) // max_students
 
 # testing
 if __name__ == "__main__":
