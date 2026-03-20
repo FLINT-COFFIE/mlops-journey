@@ -4,16 +4,18 @@ from datetime import *
 
 # asking for inputs
 # filename = input("Filename: ")
-start_date = input("Starting date: ")
-no_of_days = int(input("How many days: "))
+str_date = "24.06.2020"  # input("Starting date: ")
+no_of_days = "5"  # int(input("How many days: "))
 
 # calculated reformatting
 timedelta_days = timedelta(days=no_of_days)
 
 # reformatting data types
 # no_of_days = timedelta(days=no_of_days)
-start_date = datetime.strptime(start_date, "%d.%m.%Y")
-end_date = datetime.strptime((start_date + timedelta_days), "%d.%m.%Y")
+start_date = datetime.strptime(str_date, "%d.%m.%Y")
+end_date = datetime.strftime((start_date + timedelta_days), "%d.%m.%Y")
+# end_date = (start_date + timedelta_days).strftime(end_date, "%d.%m.%Y")
+
 
 # difference
 difference = end_date - start_date
