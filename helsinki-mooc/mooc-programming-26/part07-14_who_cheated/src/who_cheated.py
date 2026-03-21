@@ -1,14 +1,22 @@
 # Write your solution here
 # imports
-import datetime
+from datetime import datetime
 import csv
 
 
 # defining functions
 def cheaters():
-    with open("start_time.csv") as startfile:
+    ##reading starttimes
+    with open("start_times.csv") as startfile:
+        start_time_info = {}
         for line in csv.reader(startfile, delimiter=";"):
-            print(line)
+            name = line[0]
+            start_time = datetime.strptime(line[1], "%H:%M")
+
+            # populating start_time_info
+            start_time_info[name] = start_time
+
+        print(start_time_info)
 
 
 # testing
