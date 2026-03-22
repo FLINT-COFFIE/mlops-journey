@@ -42,8 +42,10 @@ def cheaters():
                 if (ending - starting) > timedelta(hours=3):
                     cheater.append(name)
 
-        print(cheater)
+        # print(cheater)
+        return cheater
 
 
-# testing
-cheaters()
+if __name__ == "__main__":
+    # testing
+    cheaters()
