@@ -4,6 +4,7 @@ import string
 # writing my first module
 
 
+# First function
 def change_case(orig_string: str):
     # what it does
     """creates and returns a new version of the parameter string. The lowercase letters in the original will be uppercase, and uppercase letters will be lowercase."""
@@ -16,4 +17,17 @@ def change_case(orig_string: str):
     return replaced_str
 
 
-change_case
+# Second Function
+def split_in_half(orig_string: str):
+    """splits the parameter string in half, and returns the results in a tuple."""  # splitting
+    first_index = len(orig_string) // 2
+    # second_index = len(orig_string) - first_index
+    first_half = orig_string[:first_index]
+    second_half = orig_string[first_index:]
+
+    return first_half, second_half
+
+
+# testing
+print(change_case("fLINT"))
+print(split_in_half("fLINT"))
