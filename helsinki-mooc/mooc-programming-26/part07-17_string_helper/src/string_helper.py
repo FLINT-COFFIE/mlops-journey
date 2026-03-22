@@ -28,6 +28,25 @@ def split_in_half(orig_string: str):
     return first_half, second_half
 
 
+# THIRD FUNCTION
+def remove_special_characters(orig_string: str):
+    """Returns a new version of the parameter string, with all special characters removed"""
+    allowed = " "
+    allowed += string.ascii_letters
+    allowed += string.digits
+
+    # output
+    output = ""
+
+    # looping through orig_string
+    for char in orig_string:
+        if char in allowed:
+            output += char
+
+    return output
+
+
 # testing
 print(change_case("fLINT"))
 print(split_in_half("fLINT"))
+print(remove_special_characters("fLINT, C"))
