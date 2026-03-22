@@ -1,6 +1,6 @@
 # Write your solution here
 # imports
-from datetime import datetime
+from datetime import datetime, timedelta
 import csv
 
 
@@ -17,6 +17,7 @@ def cheaters():
             # populating start_time_info
             start_time_info[name] = start_time
 
+    # reading submissions
     with open("submissions.csv") as end_file:
         # end file info
         end_file_info = {}
@@ -32,7 +33,16 @@ def cheaters():
             if name not in end_file_info or end_time > end_file_info[name]:
                 end_file_info[name] = end_time
 
-        print(end_file_info)
+        cheater = []
+
+        for name, date in end_file_info.items():
+            starting = start_time_info[name]
+            ending = date
+            if name in start_time_info:
+                if (ending - starting) > timedelta(hours=3):
+                    cheater.append(name)
+
+        print(cheater)
 
 
 # testing
