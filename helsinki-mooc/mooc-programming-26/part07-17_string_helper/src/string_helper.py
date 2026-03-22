@@ -10,7 +10,9 @@ def change_case(orig_string: str):
     """creates and returns a new version of the parameter string. The lowercase letters in the original will be uppercase, and uppercase letters will be lowercase."""
     replaced_str = ""
     for char in orig_string:
-        if char.islower():
+        if char == " ":
+            replaced_str += char
+        elif char.islower():
             replaced_str += char.upper()
         elif char.isupper():
             replaced_str += char.lower()
@@ -46,7 +48,8 @@ def remove_special_characters(orig_string: str):
     return output
 
 
-# testing
-print(change_case("fLINT"))
-print(split_in_half("fLINT"))
-print(remove_special_characters("fLINT, C"))
+if __name__ == "__main__":
+    # testing
+    print(change_case("fLINT"))
+    print(split_in_half("fLINT"))
+    print(remove_special_characters("fLINT, C123@#"))
