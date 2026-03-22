@@ -28,7 +28,9 @@ def cheaters():
             # points = line[2]
             end_time = datetime.strptime(line[3], "%H:%M")
 
-            end_file_info[name] = end_time
+            # condition to add name to endfile info
+            if name not in end_file_info or end_time > end_file_info[name]:
+                end_file_info[name] = end_time
 
         print(end_file_info)
 
