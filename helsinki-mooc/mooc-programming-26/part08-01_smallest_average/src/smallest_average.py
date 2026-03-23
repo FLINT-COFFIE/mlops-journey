@@ -17,5 +17,12 @@ def average(person: dict):
 
 # defining function
 def smallest_average(person1: dict, person2: dict, person3: dict):
+    # return person at a go
+    people = [person1, person2, person3]
+    # find min averages
     averages = [average(person1), average(person2), average(person3)]
-    return min(averages)
+    # looping through people
+    for person in people:
+        if average(person) == min(averages):
+            # returning person
+            return person
