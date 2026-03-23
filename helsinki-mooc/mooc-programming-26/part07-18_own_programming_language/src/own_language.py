@@ -49,23 +49,23 @@ def run(program):
             value2 = get_value(parts[3])
             target = parts[5]
 
-        condition_met = False
-        if operator == "==":
-            condition_met = value1 == value2
-        elif operator == "!=":
-            condition_met = value1 != value2
-        elif operator == "<=":
-            condition_met = value1 <= value2
-        elif operator == ">=":
-            condition_met = value1 >= value2
-        elif operator == "<":
-            condition_met = value1 < value2
-        elif operator == ">":
-            condition_met = value1 > value2
+            condition_met = False
+            if operator == "==":
+                condition_met = value1 == value2
+            elif operator == "!=":
+                condition_met = value1 != value2
+            elif operator == "<=":
+                condition_met = value1 <= value2
+            elif operator == ">=":
+                condition_met = value1 >= value2
+            elif operator == "<":
+                condition_met = value1 < value2
+            elif operator == ">":
+                condition_met = value1 > value2
 
-        if condition_met:
-            i = labels[target]
-            continue
+            if condition_met:
+                i = labels[target]
+                continue
 
         elif command == "END":
             break
@@ -76,5 +76,6 @@ def run(program):
 
 
 if __name__ == "__main__":
-    ##testing
+    ##
+    program = "PRINT [value]"
     run(program)
