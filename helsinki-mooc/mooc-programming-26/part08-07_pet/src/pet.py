@@ -7,3 +7,5 @@ class Pet:
 
 
 # defining the function
+def new_pet(name: str, species: str, year_of_birth: int):
+    pet = Pet(name, species, year_of_birth)
