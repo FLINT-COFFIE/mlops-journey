@@ -9,3 +9,12 @@ class Pet:
 # defining the function
 def new_pet(name: str, species: str, year_of_birth: int):
     pet = Pet(name, species, year_of_birth)
+    return pet
+
+
+if __name__ == "__main__":
+    # testing
+    fluffy = new_pet("Fluffy", "dog", 2017)
+    print(fluffy.name)
+    print(fluffy.species)
+    print(fluffy.year_of_birth)
