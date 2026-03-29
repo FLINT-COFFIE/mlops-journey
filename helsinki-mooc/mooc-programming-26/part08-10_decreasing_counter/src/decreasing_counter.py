@@ -7,6 +7,7 @@ class DecreasingCounter:
         print("value:", self.value)
 
     def decrease(self):
-        self.initial_value -= 1
+        if self.initial_value >= 1:
+            self.initial_value -= 1
 
     # Write the rest of the methods here!
