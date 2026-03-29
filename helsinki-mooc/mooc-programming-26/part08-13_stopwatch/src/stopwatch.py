@@ -3,3 +3,14 @@ class Stopwatch:
     def __init__(self):
         self.seconds = 0
         self.minutes = 0
+
+    def tick(self):
+        if self.seconds == 60:
+            self.seconds = 0
+            if self.minutes < 60:
+                self.minutes += 1
+        else:
+            self.seconds += 1
+
+
+# testing
