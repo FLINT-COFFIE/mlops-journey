@@ -10,4 +10,7 @@ class DecreasingCounter:
         if self.initial_value >= 1:
             self.initial_value -= 1
 
+    def set_to_zero(self):
+        self.initial_value = 0
+
     # Write the rest of the methods here!
