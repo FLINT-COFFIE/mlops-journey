@@ -18,12 +18,17 @@ class NumberStats:
         return self.numbers / self.count
 
 
-# testing
-stats = NumberStats()
-stats.add_number(3)
-stats.add_number(5)
-stats.add_number(1)
-stats.add_number(2)
-print("Numbers added:", stats.count_numbers())
-print("Sum of numbers:", stats.get_sum())
-print("Mean of numbers:", stats.average())
+# Part 3
+print("Please type in integer numbers:")
+add = NumberStats()
+while True:
+    num = int(input(""))
+    # less than zero
+    if num < 0:
+        break
+    # adding number
+    add.add_number(num)
+
+# final result
+print(f"Sum of numbers: {add.get_sum()}")
+print(f"Mean of numbers: {add.average()}")
