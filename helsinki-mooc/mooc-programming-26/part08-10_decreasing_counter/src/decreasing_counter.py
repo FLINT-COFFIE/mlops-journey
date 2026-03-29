@@ -7,6 +7,6 @@ class DecreasingCounter:
         print("value:", self.value)
 
     def decrease(self):
-        pass
+        self.initial_value -= 1
 
     # Write the rest of the methods here!
