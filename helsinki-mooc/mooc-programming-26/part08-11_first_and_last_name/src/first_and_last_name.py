@@ -8,10 +8,18 @@ class Person:
         first_name = parts[0]
         return first_name
 
-    def return_second_name(self):
+    def return_last_name(self):
         parts = self.name.split()
-        second_name = parts[1]
-        return second_name
+        last_name = parts[1]
+        return last_name
 
 
 # testing
+if __name__ == "__main__":
+    peter = Person("Peter Pythons")
+    print(peter.return_first_name())
+    print(peter.return_last_name())
+
+    paula = Person("Paula Pythonnen")
+    print(paula.return_first_name())
+    print(paula.return_last_name())
