@@ -4,22 +4,23 @@ class LunchCard:
         self.balance = balance
 
     def eat_lunch(self):
-        self.balance -= 2.60
+        if self.balance >= 2.60:
+            self.balance -= 2.60
 
     def eat_special(self):
-        self.balance -= 4.60
+        if self.balance >= 4.60:
+            self.balance -= 4.60
 
     def __str__(self):
         return f"The balance is {self.balance:.1f} euros."
 
+    def deposit_money(self, amount: int):
+        if amount < 0:
+            raise ValueError("You cannot deposit an amount of money less than zero")
+        else:
+            self.balance += amount
+
 
 # testing
-card = LunchCard(50)
-print(card)
-
-card.eat_lunch()
-print(card)
-
-card.eat_special()
-card.eat_lunch()
-print(card)
+card = LunchCard(10)
+card.deposit_money(-10)
