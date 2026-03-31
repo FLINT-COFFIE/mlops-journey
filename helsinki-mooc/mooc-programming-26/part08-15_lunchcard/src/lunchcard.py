@@ -21,6 +21,30 @@ class LunchCard:
             self.balance += amount
 
 
+# Main function
+peters_card = LunchCard(20)
+graces_card = LunchCard(30)
+# the rest of your main function
+
+# First Part
+peters_card.eat_special()
+graces_card.eat_lunch()
+print(f"Peter: {peters_card}")
+print(f"Grace: {graces_card}")
+
+# Second Part
+peters_card.deposit_money(20)
+graces_card.eat_special()
+print(f"Peter: {peters_card}")
+print(f"Grace: {graces_card}")
+
+# Third Part
+peters_card.eat_lunch()
+peters_card.eat_lunch()
+graces_card.deposit_money(50)
+print(f"Peter: {peters_card}")
+print(f"Grace: {graces_card}")
+
 # testing
-card = LunchCard(10)
-card.deposit_money(-10)
+# card = LunchCard(10)
+# card.deposit_money(-10)
