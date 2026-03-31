@@ -12,11 +12,11 @@ class LunchCard:
             self.balance -= 4.60
 
     def __str__(self):
-        return f"The balance is {self.balance:.1f} euros."
+        return f"The balance is {self.balance:.1f} euros"
 
     def deposit_money(self, amount: int):
         if amount < 0:
-            raise ValueError("You cannot deposit an amount of money less than zero")
+            raise ValueError  # ("You cannot deposit an amount of money less than zero")
         else:
             self.balance += amount
 
