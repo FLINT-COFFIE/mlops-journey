@@ -1,6 +1,4 @@
 # WRITE YOUR SOLUTION HERE:
-
-
 class LunchCard:
     def __init__(self, balance: float):
         self.balance = balance

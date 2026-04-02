@@ -15,4 +15,17 @@ class BabyCentre:
 
     def weigh(self, person: Person):
         # return the weight of the person passed as an argument
-        return -1
+        return person.weight
+    
+    #def 
+    
+    
+    
+#testing
+baby_centre = BabyCentre()
+
+eric = Person("Eric", 1, 110, 7)
+peter = Person("Peter", 33, 176, 85)
+
+print(f"{eric.name} weighs {baby_centre.weigh(eric)} kg")
+print(f"{peter.name} weighs {baby_centre.weigh(peter)} kg"
