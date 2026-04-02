@@ -1,5 +1,6 @@
 # WRITE YOUR SOLUTION HERE:
 
+
 class LunchCard:
     def __init__(self, balance: float):
         self.balance = balance
@@ -11,6 +12,7 @@ class LunchCard:
         pass
         # The amount should be subtracted from the balance only if there is enough money on the card
         # If the payment is successful, the method returns True, and otherwise it returns False
+
 
 class PaymentTerminal:
     def __init__(self):
@@ -27,7 +29,7 @@ class PaymentTerminal:
         # the lunch is not sold, and the entire sum is returned.
         pass
 
-   def eat_special(self, payment: float):
+    def eat_special(self, payment: float):
         # A special lunch costs 4.30 euros.
         # Increase the value of the funds at the terminal by the price of the lunch,
         # increase the number of specials sold, and return the appropriate change.
