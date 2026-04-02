@@ -7,7 +7,10 @@ class LunchCard:
         self.balance += amount
 
     def subtract_from_balance(self, amount: float):
-        pass
+        if self.balance - amount >= 0:
+            self.balance -= amount
+            return True
+        return False
         # The amount should be subtracted from the balance only if there is enough money on the card
         # If the payment is successful, the method returns True, and otherwise it returns False
 
@@ -49,3 +52,15 @@ class PaymentTerminal:
 
     def deposit_money_on_card(self, card: LunchCard, amount: float):
         pass
+
+
+# testing
+if __name__ == "__main__":
+    card = LunchCard(10)
+    print("Balance", card.balance)
+    result = card.subtract_from_balance(8)
+    print("Payment successful:", result)
+    print("Balance", card.balance)
+    result = card.subtract_from_balance(4)
+    print("Payment successful:", result)
+    print("Balance", card.balance)
