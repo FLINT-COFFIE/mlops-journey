@@ -14,7 +14,7 @@ class Car:
             self.__gasoline = 0
         else:
             self.__odometer_reading += Km
-            self.__gasoline = 60 - Km
+            self.__gasoline = self.__gasoline - Km
 
     def __str__(self):
         return f"Car: odometer reading {self.__odometer_reading} km, petrol remaining {self.__gasoline} litres"
