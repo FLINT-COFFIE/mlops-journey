@@ -1,5 +1,5 @@
 # WRITE YOUR SOLUTION HERE:
-
+# Predefined Classes
 class Pet:
     def __init__(self, name: str, description: str):
         self.name = name
@@ -8,10 +8,19 @@ class Pet:
     def __str__(self):
         return f"{self.name} ({self.description})"
 
+
 class Person:
     def __init__(self, name: str, pet: Pet):
         self.name = name
         self.pet = pet
 
     def __str__(self):
-        return self.name
+        return f"{self.name}, whose pal is {self.pet.name}, a {self.pet.description}"
+
+
+# Main Function
+# testing
+hulda = Pet("Hulda", "mixed-breed dog")
+levi = Person("Levi", hulda)
+
+print(levi)
