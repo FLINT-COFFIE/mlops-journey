@@ -19,8 +19,9 @@ class Person:
 
 
 # Main Function
-# testing
-hulda = Pet("Hulda", "mixed-breed dog")
-levi = Person("Levi", hulda)
+if __name__ == "__main__":
+    # testing
+    hulda = Pet("Hulda", "mixed-breed dog")
+    levi = Person("Levi", hulda)
 
-print(levi)
+    print(levi)
