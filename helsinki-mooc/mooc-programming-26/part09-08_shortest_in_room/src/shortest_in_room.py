@@ -29,14 +29,42 @@ class Room:
         for person in self.people:
             print(f"{person} ({person.height} cm)")
 
+    def shortest(self):
+        if len(self.people) == 0:
+            return None
 
-# testing
-room = Room()
-print("Is the room empty?", room.is_empty())
-room.add(Person("Lea", 183))
-room.add(Person("Kenya", 172))
-room.add(Person("Ally", 166))
-room.add(Person("Nina", 162))
-room.add(Person("Dorothy", 155))
-print("Is the room empty?", room.is_empty())
-room.print_contents()
+        short_person = self.people[0]
+        for person in self.people:
+            if person.height < short_person.height:
+                short_person = person
+        return short_person
+
+    def remove_shortest(self):
+        if len(self.people) == 0:
+            return None
+
+        short = self.shortest()
+        self.sum_height -= short.height
+        self.people.remove(short)
+        if short is not None:
+            return short
+
+
+if __name__ == "__main__":
+    # testing
+    room = Room()
+
+    room.add(Person("Lea", 183))
+    room.add(Person("Kenya", 172))
+    room.add(Person("Nina", 162))
+    room.add(Person("Ally", 166))
+    room.print_contents()
+
+    print()
+
+    removed = room.remove_shortest()
+    print(f"Removed from room: {removed.name}")
+
+    print()
+
+    room.print_contents()
