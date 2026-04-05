@@ -48,8 +48,8 @@ class Suitcase:
             heaviest.append(item.weight())
         max_weight = max(heaviest)
         for item in self.__items:
-            if item.weight == max_weight:
-                heavy = item
+            if item.weight() == max_weight:
+                heavy = f"{item.name()} ({item.weight()} kg)"
         return heavy
 
 
