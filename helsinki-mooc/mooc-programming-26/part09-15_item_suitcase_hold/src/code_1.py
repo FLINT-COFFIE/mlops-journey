@@ -32,11 +32,6 @@ class Suitcase:
             total_weight += item.weight()
             self.__items.append(item)
 
-    def __str__(self):
-        if len(self.__items) == 1:
-            return f"1 item ({self.weight} kg)"
-        return f"{len(self.__items)} items ({self.weight} kg)"
-
     def print_items(self):
         for item in self.__items:
             print(f"{item.name()} ({item.weight()} kg)")
@@ -49,19 +44,59 @@ class Suitcase:
         max_weight = max(heaviest)
         for item in self.__items:
             if item.weight() == max_weight:
-                heavy = f"{item.name()} ({item.weight()} kg)"
+                heavy = item  # f"{item.name()} ({item.weight()} kg)"
         return heavy
 
+    def __str__(self):
+        if len(self.__items) == 1:
+            return f"1 item ({self.weight()} kg)"
+        return f"{len(self.__items)} items ({self.weight()} kg)"
 
+
+class CargoHold:
+    def __init__(self, maximum_weight):
+        self.__maximum_weight = maximum_weight
+        self.__cargo = []
+
+    def current_weight(self):
+        weight = 0
+        for suitcase in self.__cargo:
+            weight += suitcase.weight()
+        return weight
+
+    def add_suitcase(self, suitcase: Suitcase):
+        if suitcase.weight() + self.current_weight() <= self.__maximum_weight:
+            self.__cargo.append(suitcase)
+
+    def __str__(self):
+        if len(self.__cargo) == 1:
+            return f"1 suitcase, space for {self.__maximum_weight - self.current_weight()} kg"
+        return f"{len(self.__cargo)} suitcases, space for {self.__maximum_weight - self.current_weight()} kg"
+
+    def print_items(self):
+        
+        
+        
+        
+        
+        
 # testing
+cargo_hold = CargoHold(1000)
+print(cargo_hold)
+
 book = Item("ABC Book", 2)
 phone = Item("Nokia 3210", 1)
 brick = Item("Brick", 4)
 
-suitcase = Suitcase(10)
-suitcase.add_item(book)
-suitcase.add_item(phone)
-suitcase.add_item(brick)
+adas_suitcase = Suitcase(10)
+adas_suitcase.add_item(book)
+adas_suitcase.add_item(phone)
 
-heaviest = suitcase.heaviest_item()
-print(f"The heaviest item: {heaviest}")
+peters_suitcase = Suitcase(10)
+peters_suitcase.add_item(brick)
+
+cargo_hold.add_suitcase(adas_suitcase)
+print(cargo_hold)
+
+cargo_hold.add_suitcase(peters_suitcase)
+print(cargo_hold)
