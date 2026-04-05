@@ -37,15 +37,15 @@ class Suitcase:
             print(f"{item.name()} ({item.weight()} kg)")
 
     def heaviest_item(self):
-        heaviest = []
-        heavy = None
+        # heaviest = []
+        heaviest = None
+        # for item in self.__items:
+        #    heaviest.append(item.weight())
+        # max_weight = max(heaviest)
         for item in self.__items:
-            heaviest.append(item.weight())
-        max_weight = max(heaviest)
-        for item in self.__items:
-            if item.weight() == max_weight:
-                heavy = item  # f"{item.name()} ({item.weight()} kg)"
-        return heavy
+            if item.weight() > heaviest.weight():
+                heaviest = item  # f"{item.name()} ({item.weight()} kg)"
+        return heaviest
 
     def __str__(self):
         if len(self.__items) == 1:
@@ -74,16 +74,11 @@ class CargoHold:
         return f"{len(self.__cargo)} suitcases, space for {self.__maximum_weight - self.current_weight()} kg"
 
     def print_items(self):
-        
-        
-        
-        
-        
-        
-# testing
-cargo_hold = CargoHold(1000)
-print(cargo_hold)
+        for suitcase in self.__cargo:
+            suitcase.print_items()
 
+
+# testing
 book = Item("ABC Book", 2)
 phone = Item("Nokia 3210", 1)
 brick = Item("Brick", 4)
@@ -95,8 +90,9 @@ adas_suitcase.add_item(phone)
 peters_suitcase = Suitcase(10)
 peters_suitcase.add_item(brick)
 
+cargo_hold = CargoHold(1000)
 cargo_hold.add_suitcase(adas_suitcase)
-print(cargo_hold)
-
 cargo_hold.add_suitcase(peters_suitcase)
-print(cargo_hold)
+
+print("The suitcases in the cargo hold contain the following items:")
+cargo_hold.print_items()
