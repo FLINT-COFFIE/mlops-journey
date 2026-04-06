@@ -11,3 +11,9 @@ class Computer:
     @property
     def speed(self):
         return self.__speed
+
+
+## Inheritance of Computer for Laptop Computer
+class LaptopComputer(Computer):
+    def __init__(self, model, speed):
+        super().__init__(model, speed)
