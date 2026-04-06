@@ -5,6 +5,7 @@ class ComputerGame:
         self.publisher = publisher
         self.year = year
 
+
 class GameWarehouse:
     def __init__(self):
         self.__games = []
@@ -15,3 +16,5 @@ class GameWarehouse:
     def list_games(self):
         return self.__games
 
+
+# Game museum
