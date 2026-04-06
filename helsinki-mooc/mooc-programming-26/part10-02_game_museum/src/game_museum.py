@@ -26,6 +26,16 @@ class GameMuseum(GameWarehouse):
         games = super().list_games()
         early_games = []
         for game in games:
-            if game.year() < 1990:
+            if game.year < 1990:
                 early_games.append(game)
         return early_games
+
+
+if __name__ == "__main__":
+    # testing
+    museum = GameMuseum()
+    museum.add_game(ComputerGame("Pacman", "Namco", 1980))
+    museum.add_game(ComputerGame("GTA 2", "Rockstar", 1999))
+    museum.add_game(ComputerGame("Bubble Bobble", "Taito", 1986))
+    for game in museum.list_games():
+        print(game.name)
