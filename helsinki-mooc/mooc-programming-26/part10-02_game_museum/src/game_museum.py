@@ -18,3 +18,14 @@ class GameWarehouse:
 
 
 # Game museum
+class GameMuseum(GameWarehouse):
+    def __init__(self):
+        super().__init__()
+
+    def list_games(self):
+        games = super().list_games()
+        early_games = []
+        for game in games:
+            if game.year() < 1990:
+                early_games.append(game)
+        return early_games
