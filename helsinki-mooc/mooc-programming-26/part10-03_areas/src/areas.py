@@ -20,7 +20,8 @@ class Square(Rectangle):
         return f"square {self.width}x{self.height}"
 
 
-# testing
-square = Square(4)
-print(square)
-print("area:", square.area())
+if __name__ == "__main__":
+    # testing
+    square = Square(4)
+    print(square)
+    print("area:", square.area())
