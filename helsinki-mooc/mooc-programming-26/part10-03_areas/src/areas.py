@@ -13,8 +13,11 @@ class Rectangle:
 
 class Square(Rectangle):
     def __init__(self, width: int):
-        super().__init__(width, self.height)
+        super().__init__(width, width)
         self.height = width
+
+    def __str__(self):
+        return f"square {self.width}x{self.height}"
 
 
 # testing
