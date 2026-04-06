@@ -60,6 +60,7 @@ class Suitcase:
         return f"{len(self.__items)} items ({self.weight()} kg)"
 
 
+# Final class
 class CargoHold:
     def __init__(self, maximum_weight):
         self.__maximum_weight = maximum_weight
