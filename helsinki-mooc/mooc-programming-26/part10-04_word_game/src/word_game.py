@@ -34,3 +34,5 @@ class WordGame:
 
 
 # starting word game
+class LongestWord:
+    
