@@ -40,6 +40,31 @@ class LongestWord(WordGame):
 
     def round_winner(self, player1_word, player2_word):
         if len(player1_word) > len(player2_word):
-            return player1_word
+            return 1
         else:
-            return player2_word
+            return 2
+
+
+class MostVowels(WordGame):
+    def __init__(self, rounds):
+        super().__init__(rounds)
+
+    def round_winner(self, player1_word, player2_word):
+        vowels = ["a", "e", "i", "o", "u"]
+        p1_vowels = 0
+        p2_vowels = 0
+
+        # Player one vowels
+        for char in player1_word:
+            if char in vowels:
+                p1_vowels += 1
+        # Player two vowels
+        for char in player2_word:
+            if char in vowels:
+                p2_vowels += 1
+
+        # winner
+        if len(p1_vowels) > len(p2_vowels):
+            return 1
+        else:
+            return 2
