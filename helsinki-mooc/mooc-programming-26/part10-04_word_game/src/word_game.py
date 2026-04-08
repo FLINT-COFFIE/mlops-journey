@@ -41,8 +41,10 @@ class LongestWord(WordGame):
     def round_winner(self, player1_word, player2_word):
         if len(player1_word) > len(player2_word):
             return 1
-        else:
+        elif len(player2_word) > len(player1_word):
             return 2
+        else:
+            return 0
 
 
 class MostVowels(WordGame):
@@ -66,8 +68,10 @@ class MostVowels(WordGame):
         # winner
         if p1_vowels > p2_vowels:
             return 1
-        else:
+        elif p2_vowels > p1_vowels:
             return 2
+        else:
+            return 0
 
 
 class RockPaperScissors(WordGame):
