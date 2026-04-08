@@ -34,5 +34,12 @@ class WordGame:
 
 
 # starting word game
-class LongestWord:
-    
+class LongestWord(WordGame):
+    def __init__(self, rounds):
+        super().__init__(rounds)
+
+    def round_winner(self, player1_word, player2_word):
+        if len(player1_word) > len(player2_word):
+            return player1_word
+        else:
+            return player2_word
