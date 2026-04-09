@@ -29,11 +29,35 @@ class Money:
     def __ne__(self, another):
         return self.euros != another.euros or self.cents != another.cents
 
+    # addition and subtraction
+    def __add__(self, another):
+        new_total = (self.euros * 100 + self.cents) + (
+            another.euros * 100 + another.cents
+        )
+        new_euros = new_total // 100
+        new_cents = new_total % 100
+        return Money(new_euros, new_cents)
+
+    def __sub__(self, another):
+        new_total = (self.euros * 100 + self.cents) - (
+            another.euros * 100 + another.cents
+        )
+        if new_total < 0:
+            raise ValueError("a negative result is not allowed")
+        else:
+            new_euros = new_total // 100
+            new_cents = new_total % 100
+            return Money(new_euros, new_cents)
+
 
 # if __name__ == "__main__":
-e1 = Money(4, 10)
-e2 = Money(2, 5)
+e1 = Money(4, 5)
+e2 = Money(2, 95)
 
-print(e1 != e2)
-print(e1 < e2)
-print(e1 > e2)
+e3 = e1 + e2
+e4 = e1 - e2
+
+print(e3)
+print(e4)
+
+e5 = e2 - e1
