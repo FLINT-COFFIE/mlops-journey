@@ -11,14 +11,29 @@ class Money:
     def __eq__(self, another):
         return self.euros == another.euros and self.cents == another.cents
 
+    # other comparison operators
+    def __lt__(self, another):
+        if self.euros < another.euros:
+            return True
+        elif self.euros == another.euros and self.cents < another.cents:
+            return True
+        return False
 
-if __name__ == "__main__":
-    e1 = Money(4, 10)
-    e2 = Money(2, 5)
-    e3 = Money(4, 10)
+    def __gt__(self, another):
+        if self.euros > another.euros:
+            return True
+        elif self.euros == another.euros and self.cents > another.cents:
+            return True
+        return False
 
-    print(e1)
-    print(e2)
-    print(e3)
-    print(e1 == e2)
-    print(e1 == e3)
+    def __ne__(self, another):
+        return self.euros != another.euros or self.cents != another.cents
+
+
+# if __name__ == "__main__":
+e1 = Money(4, 10)
+e2 = Money(2, 5)
+
+print(e1 != e2)
+print(e1 < e2)
+print(e1 > e2)
