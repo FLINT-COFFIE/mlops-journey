@@ -8,10 +8,9 @@ class SuperHero:
         return f"{self.name}, superpowers: {self.superpowers}"
 
 
-class SuperGroup(SuperHero):
+class SuperGroup:
     def __init__(self, name: str, location: str):
-        super().__init__(name)
-        self._name = super().name
+        self._name = name
         self._location = location
         self._members = []
 
@@ -27,21 +26,22 @@ class SuperGroup(SuperHero):
 
     # Add member method
     def add_member(self, hero: SuperHero):
-        self.members.append(hero)
+        self._members.append(hero)
 
     # print_group method
     def print_group(self):
         print(f"{self._name}, {self._location}")
         print("Members:")
         for hero in self._members:
-            print(f"{hero.name}, superpoweres: {hero.superpowers}")
+            print(hero)
 
 
-# testing
-superperson = SuperHero("SuperPerson", "Superspeed, superstrength")
-invisible = SuperHero("Invisible Inca", "Invisibility")
-revengers = SuperGroup("Revengers", "Emerald City")
+if __name__ == "__main__":
+    # testing
+    superperson = SuperHero("SuperPerson", "Superspeed, superstrength")
+    invisible = SuperHero("Invisible Inca", "Invisibility")
+    revengers = SuperGroup("Revengers", "Emerald City")
 
-revengers.add_member(superperson)
-revengers.add_member(invisible)
-revengers.print_group()
+    revengers.add_member(superperson)
+    revengers.add_member(invisible)
+    revengers.print_group()
