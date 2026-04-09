@@ -14,21 +14,34 @@ class SuperGroup(SuperHero):
         self._name = super().name
         self._location = location
         self._members = []
-        
+
     # Getters
-    
+
     @property
     def name(self):
         return self._name
 
     @property
     def location(self):
-        return self.location
+        return self._location
 
     # Add member method
     def add_member(self, hero: SuperHero):
         self.members.append(hero)
-        
+
     # print_group method
     def print_group(self):
-        
+        print(f"{self._name}, {self._location}")
+        print("Members:")
+        for hero in self._members:
+            print(f"{hero.name}, superpoweres: {hero.superpowers}")
+
+
+# testing
+superperson = SuperHero("SuperPerson", "Superspeed, superstrength")
+invisible = SuperHero("Invisible Inca", "Invisibility")
+revengers = SuperGroup("Revengers", "Emerald City")
+
+revengers.add_member(superperson)
+revengers.add_member(invisible)
+revengers.print_group()
