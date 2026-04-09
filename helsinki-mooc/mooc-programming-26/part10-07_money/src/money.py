@@ -5,15 +5,11 @@ class Money:
         self.cents = cents
 
     def __str__(self):
-        fig = f"{self.euros}.{self.cents}"
-        fig = float(fig)
-        if self.cents < 10:
-            return f"{self.euros}.0{self.cents} eur"
-        return f"{fig:.2f} eur"
+        return f"{self.euros}.{self.cents:02d} eur"
 
     # equality between objects
     def __eq__(self, another):
-        return self == another
+        return self.euros == another.euros and self.cents == another.cents
 
 
 if __name__ == "__main__":
