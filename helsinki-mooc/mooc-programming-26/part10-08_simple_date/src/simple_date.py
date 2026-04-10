@@ -48,6 +48,9 @@ class SimpleDate:
             or self.day != another.day
         )
 
+    def __str__(self):
+        return f"{self.day}/{self.month}/{self.year}"
+
 
 # testing
 d1 = SimpleDate(4, 10, 2020)
