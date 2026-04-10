@@ -41,12 +41,23 @@ class SimpleDate:
             and self.day == another.day
         )
 
+    def __ne__(self, another: "SimpleDate"):
+        return (
+            self.year != another.year
+            or self.month != another.month
+            or self.day != another.day
+        )
+
 
 # testing
 d1 = SimpleDate(4, 10, 2020)
 d2 = SimpleDate(28, 12, 1985)
 d3 = SimpleDate(28, 12, 1985)
 
+print(d1)
+print(d2)
+print(d1 == d2)
+print(d1 != d2)
 print(d1 == d3)
 print(d1 < d2)
 print(d1 > d2)
