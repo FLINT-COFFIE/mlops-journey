@@ -7,6 +7,20 @@ class SimpleDate:
         self.year = year
 
     def __lt__(self, another: "SimpleDate"):
+        if self.year < another.year:
+            return True
+        elif self.year == another.year and self.month < another.month:
+            return True
+        elif (
+            self.year == another.year
+            and self.month < another.month
+            and self.day < another.day
+        ):
+            return True
+        else:
+            return False
+
+    def __gt__(self, another: "SimpleDate"):
         if self.year > another.year:
             return True
         elif self.year == another.year and self.month > another.month:
@@ -18,4 +32,14 @@ class SimpleDate:
         ):
             return True
         else:
-            return True
+            return False
+
+
+# testing
+d1 = SimpleDate(4, 10, 2020)
+d2 = SimpleDate(28, 12, 1985)
+d3 = SimpleDate(28, 12, 1985)
+
+print(d1 == d3)
+print(d1 < d2)
+print(d1 > d2)
