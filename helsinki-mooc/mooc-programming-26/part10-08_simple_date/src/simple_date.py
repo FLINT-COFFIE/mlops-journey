@@ -34,6 +34,13 @@ class SimpleDate:
         else:
             return False
 
+    def __eq__(self, another: "SimpleDate"):
+        return (
+            self.year == another.year
+            and self.month == another.month
+            and self.day == another.day
+        )
+
 
 # testing
 d1 = SimpleDate(4, 10, 2020)
