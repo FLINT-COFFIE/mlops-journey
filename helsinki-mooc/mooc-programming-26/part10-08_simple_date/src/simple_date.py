@@ -7,32 +7,10 @@ class SimpleDate:
         self.year = year
 
     def __lt__(self, another: "SimpleDate"):
-        if self.year < another.year:
-            return True
-        elif self.year == another.year and self.month < another.month:
-            return True
-        elif (
-            self.year == another.year
-            and self.month < another.month
-            and self.day < another.day
-        ):
-            return True
-        else:
-            return False
+        return self.total_days() < another.total_days()
 
     def __gt__(self, another: "SimpleDate"):
-        if self.year > another.year:
-            return True
-        elif self.year == another.year and self.month > another.month:
-            return True
-        elif (
-            self.year == another.year
-            and self.month > another.month
-            and self.day > another.day
-        ):
-            return True
-        else:
-            return False
+        return self.total_days() > another.total_days()
 
     def __eq__(self, another: "SimpleDate"):
         return (
@@ -77,11 +55,12 @@ class SimpleDate:
         return f"{self.day}.{self.month}.{self.year}"
 
 
-# testing
-d1 = SimpleDate(4, 10, 2020)
-d2 = SimpleDate(2, 11, 2020)
-d3 = SimpleDate(28, 12, 1985)
+if __name__ == "__main__":
+    # testing
+    d1 = SimpleDate(4, 10, 2020)
+    d2 = SimpleDate(2, 11, 2020)
+    d3 = SimpleDate(28, 12, 1985)
 
-print(d2 - d1)
-print(d1 - d2)
-print(d1 - d3)
+    print(d2 - d1)
+    print(d1 - d2)
+    print(d1 - d3)
