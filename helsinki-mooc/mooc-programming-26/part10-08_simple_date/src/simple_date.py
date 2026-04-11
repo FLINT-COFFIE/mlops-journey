@@ -48,19 +48,40 @@ class SimpleDate:
             or self.day != another.day
         )
 
+    def total_days(self):
+        return self.day + self.month * 30 + self.year * 360
+
+    def __add__(self, days: int):
+        total_days = self.total_days() + days
+
+        new_year = total_days // 360
+        remaining_days = total_days % 360
+
+        new_days = remaining_days % 30
+        new_month = remaining_days // 30
+
+        if new_month == 0:
+            new_month = 12
+            new_year -= 1
+
+        if new_days == 0:
+            new_days = 30
+            new_month -= 1
+
+        return SimpleDate(new_days, new_month, new_year)
+
     def __str__(self):
-        return f"{self.day}/{self.month}/{self.year}"
+        return f"{self.day}.{self.month}.{self.year}"
 
 
 # testing
 d1 = SimpleDate(4, 10, 2020)
 d2 = SimpleDate(28, 12, 1985)
-d3 = SimpleDate(28, 12, 1985)
+
+d3 = d1 + 3
+d4 = d2 + 400
 
 print(d1)
 print(d2)
-print(d1 == d2)
-print(d1 != d2)
-print(d1 == d3)
-print(d1 < d2)
-print(d1 > d2)
+print(d3)
+print(d4)
