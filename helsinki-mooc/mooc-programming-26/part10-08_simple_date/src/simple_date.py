@@ -70,18 +70,18 @@ class SimpleDate:
 
         return SimpleDate(new_days, new_month, new_year)
 
+    def __sub__(self, other):
+        return abs(self.total_days() - other.total_days())
+
     def __str__(self):
         return f"{self.day}.{self.month}.{self.year}"
 
 
 # testing
 d1 = SimpleDate(4, 10, 2020)
-d2 = SimpleDate(28, 12, 1985)
+d2 = SimpleDate(2, 11, 2020)
+d3 = SimpleDate(28, 12, 1985)
 
-d3 = d1 + 3
-d4 = d2 + 400
-
-print(d1)
-print(d2)
-print(d3)
-print(d4)
+print(d2 - d1)
+print(d1 - d2)
+print(d1 - d3)
