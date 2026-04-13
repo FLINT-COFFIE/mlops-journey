@@ -1,5 +1,7 @@
 class RealProperty:
-    def __init__(self, rooms: int , square_meters: int, price_per_sqm: int, description: str):
+    def __init__(
+        self, rooms: int, square_meters: int, price_per_sqm: int, description: str
+    ):
         self.rooms = rooms
         self.square_meters = square_meters
         self.price_per_sqm = price_per_sqm
@@ -10,16 +12,29 @@ class RealProperty:
 
     def price_difference(self, compared_to):
         # Function abs returns absolute value
-        difference = abs((self.price_per_sqm * self.square_meters) - (compared_to.price_per_sqm * compared_to.square_meters))
+        difference = abs(
+            (self.price_per_sqm * self.square_meters)
+            - (compared_to.price_per_sqm * compared_to.square_meters)
+        )
         return difference
 
     def more_expensive(self, compared_to):
-        difference = (self.price_per_sqm * self.square_meters) - (compared_to.price_per_sqm * compared_to.square_meters)
+        difference = (self.price_per_sqm * self.square_meters) - (
+            compared_to.price_per_sqm * compared_to.square_meters
+        )
         return difference > 0
 
-
     def __repr__(self):
-        return (f'RealProperty(rooms = {self.rooms}, square_meters = {self.square_meters}, ' + 
-            f'price_per_sqm = {self.price_per_sqm}, description = {self.description})')
+        return (
+            f"RealProperty(rooms = {self.rooms}, square_meters = {self.square_meters}, "
+            + f"price_per_sqm = {self.price_per_sqm}, description = {self.description})"
+        )
+
 
 # WRITE YOUR SOLUTION HERE:
+def cheaper_properties(properties: list, reference: RealProperty):
+    return [
+        (property, properties.price_difference(reference))
+        for property in properties
+        if property.price_per_sqm < reference.price_per_sqm
+    ]
