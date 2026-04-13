@@ -1,9 +1,17 @@
 
 def balanced_brackets(my_string: str):
-    if len(my_string) == 0:
-        return True
-    if not (my_string[0] == '(' and my_string[-1] == ')'):
-        return False
-
-    # remove first and last character
-    return balanced_brackets(my_string[1:-1])
+    filtered = "".join([bracket for bracket in my_string if bracket in "()[]"])
+    
+    def checks(char: str):
+        if len(char) == 0:
+            return True
+        
+        round = char[0] == "(" and char [-1] == ")"
+        square = char[0] == "[" and char [-1] == "]"
+        
+        if not round or square:
+            return False
+        
+        return checks(s[1:-1])
+    return checks(filtered)
+        
