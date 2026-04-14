@@ -65,7 +65,7 @@ class OrderBook:
 
 orders = OrderBook()
 
-def command():
+def commands():
     print("commands:")
     print("0 exit")
     print("1 add order")
@@ -73,8 +73,10 @@ def command():
     print("3 list unfinished tasks")
     print("4 mark task as finished")
     print("5 programmers")
-    print("6 status of programmer")
+    print("6 status of programmer\n")
     
+commands()
+
 
 def add_order():
     description = input("description: ")
@@ -87,8 +89,6 @@ def add_order():
 
 
 
-command()
-
 while True:
     command = input("command: ")
     
@@ -97,7 +97,7 @@ while True:
         break
     
     #add order
-    if command == "1":
+    elif command == "1":
         add_order()
         
     if command == "2":
@@ -110,4 +110,10 @@ while True:
         id = input("id:")
         orders.mark_finished(id)
         
-    
+    if command == "5":
+        orders.programmers()
+        
+    if command == "6":
+        programmer = input("programmer: ")
+        summary = orders.status_of_programmer(programmer)
+        print(f"tasks: finished {summary[0]} not finished {summary[1]} {summary[2]}, hours: done {summary[3]} scheduled")
