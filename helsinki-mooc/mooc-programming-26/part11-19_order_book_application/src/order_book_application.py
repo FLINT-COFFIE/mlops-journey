@@ -63,6 +63,8 @@ class OrderBook:
         return (len(finished_tasks), len(unfinished_tasks), finished_hours, unfinished_hours)
     
 
+orders = OrderBook()
+
 def command():
     print("commands:")
     print("0 exit")
@@ -73,7 +75,27 @@ def command():
     print("5 programmers")
     print("6 status of programmer")
     
+
+def add_order():
+    description = input("description: ")
+    prog_and_work = input("programmer and workload estimate: ") 
+    parts = prog_and_work.split()
+    programmer = parts[0]
+    workload = parts[1]
+    orders.add_order(description, programmer, workload)
+    print("added\n") 
+
+
+
 command()
 
 while True:
     command = input("command: ")
+    
+    #exit
+    if command == "0":
+        break
+    
+    #add order
+    if command == "1":
+        add_order()
