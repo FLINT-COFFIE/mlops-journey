@@ -99,3 +99,15 @@ while True:
     #add order
     if command == "1":
         add_order()
+        
+    if command == "2":
+        orders.finished_orders()
+    
+    if command == "3":
+        orders.unfinished_orders()
+        
+    if command == "4":
+        id = input("id:")
+        orders.mark_finished(id)
+        
+    
