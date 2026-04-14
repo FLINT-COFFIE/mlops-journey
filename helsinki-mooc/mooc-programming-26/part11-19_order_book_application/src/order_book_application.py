@@ -63,3 +63,17 @@ class OrderBook:
         return (len(finished_tasks), len(unfinished_tasks), finished_hours, unfinished_hours)
     
 
+def command():
+    print("commands:")
+    print("0 exit")
+    print("1 add order")
+    print("2 list finished tasks")
+    print("3 list unfinished tasks")
+    print("4 mark task as finished")
+    print("5 programmers")
+    print("6 status of programmer")
+    
+command()
+
+while True:
+    command = input("command: ")
