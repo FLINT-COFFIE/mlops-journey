@@ -46,4 +46,5 @@ class OrderBook:
     def unfinished_orders(self):
         return [task for task in self.orders if not task.is_finished()]
                 
-    
+    def status_of_programmer(self, programmer: str):
+        return (len(self.finished_orders), len(self.unfinished_orders))
