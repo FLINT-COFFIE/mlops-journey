@@ -61,11 +61,12 @@ class OrderBook:
         unfinished_hours = sum([task.workload for task in unfinished_tasks])
         
         return (len(finished_tasks), len(unfinished_tasks), finished_hours, unfinished_hours)
-    
 
-orders = OrderBook()
 
-def commands():
+
+def main():
+    orders = OrderBook()
+
     print("commands:")
     print("0 exit")
     print("1 add order")
@@ -73,51 +74,65 @@ def commands():
     print("3 list unfinished tasks")
     print("4 mark task as finished")
     print("5 programmers")
-    print("6 status of programmer\n")
+    print("6 status of programmer")
     
-commands()
-
-
-def add_order():
-    description = input("description: ")
-    prog_and_work = input("programmer and workload estimate: ") 
-    parts = prog_and_work.split()
-    programmer = parts[0]
-    workload = parts[1]
-    orders.add_order(description, programmer, workload)
-    print("added\n") 
-
-
-
-while True:
-    try:
+    while True:  
+        print()      
         command = input("command: ")
         
         #exit
         if command == "0":
             break
         
-        #add order
-        elif command == "1":
-            add_order()
+        try:       
+            if command == "1":
+                description = input("description: ")
+                prog_and_work = input("programmer and workload estimate: ") 
+                parts = prog_and_work.split()
+                
+                if len(parts) != 2:
+                    raise ValueError
+                
+                programmer = parts[0]
+                workload = int(parts[1])
+                
+                orders.add_order(description, programmer, workload)
+                print("added!")
+                
+            elif command == "2":
+                finished = orders.finished_orders()
+                if not finished:
+                    print("no finished tasks")
+                else:
+                    for task in finished:
+                        print(task)
             
-        elif command == "2":
-            orders.finished_orders()
-        
-        elif command == "3":
-            orders.unfinished_orders()
+            elif command == "3":
+                unfinished = orders.unfinished_orders()
+                if not unfinished:
+                    print("no unfinished tasks")
+                else:
+                    for task in unfinished:
+                        print(task)
+                
+            elif command == "4":
+                id = input("id: ")
+                orders.mark_finished(int(id))
+                print("marked as finished")
+                
+            elif command == "5":
+                for programmer in orders.programmers():
+                    print(programmer)
+                
+            elif command == "6":
+                programmer = input("programmer: ")
+                summary = orders.status_of_programmer(programmer)
+                print(f"tasks: finished {summary[0]} not finished {summary[1]}, hours: done {summary[2]} scheduled {summary[3]}")
             
-        elif command == "4":
-            id = input("id:")
-            orders.mark_finished(id)
-            
-        elif command == "5":
-            orders.programmers()
-            
-        elif command == "6":
-            programmer = input("programmer: ")
-            summary = orders.status_of_programmer(programmer)
-            print(f"tasks: finished {summary[0]} not finished {summary[1]}, hours: done {summary[2]} scheduled {summary[3]}")
-            
-    except ValueError:
-        print("erroneous input")
+            else:
+                print("erroneous input")
+        except:
+            print("erroneous input")
+
+
+main()
