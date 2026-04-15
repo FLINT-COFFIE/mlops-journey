@@ -90,30 +90,34 @@ def add_order():
 
 
 while True:
-    command = input("command: ")
-    
-    #exit
-    if command == "0":
-        break
-    
-    #add order
-    elif command == "1":
-        add_order()
+    try:
+        command = input("command: ")
         
-    if command == "2":
-        orders.finished_orders()
-    
-    if command == "3":
-        orders.unfinished_orders()
+        #exit
+        if command == "0":
+            break
         
-    if command == "4":
-        id = input("id:")
-        orders.mark_finished(id)
+        #add order
+        elif command == "1":
+            add_order()
+            
+        elif command == "2":
+            orders.finished_orders()
         
-    if command == "5":
-        orders.programmers()
-        
-    if command == "6":
-        programmer = input("programmer: ")
-        summary = orders.status_of_programmer(programmer)
-        print(f"tasks: finished {summary[0]} not finished {summary[1]} {summary[2]}, hours: done {summary[3]} scheduled")
+        elif command == "3":
+            orders.unfinished_orders()
+            
+        elif command == "4":
+            id = input("id:")
+            orders.mark_finished(id)
+            
+        elif command == "5":
+            orders.programmers()
+            
+        elif command == "6":
+            programmer = input("programmer: ")
+            summary = orders.status_of_programmer(programmer)
+            print(f"tasks: finished {summary[0]} not finished {summary[1]}, hours: done {summary[2]} scheduled {summary[3]}")
+            
+    except ValueError:
+        print("erroneous input")
