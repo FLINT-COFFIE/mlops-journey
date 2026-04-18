@@ -12,3 +12,6 @@ class BallPlayer:
 
 
 # Write your solution here
+def most_goals(players: list):
+    return lambda player: player.name
+
