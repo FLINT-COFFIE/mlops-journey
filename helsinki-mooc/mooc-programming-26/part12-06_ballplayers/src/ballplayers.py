@@ -16,7 +16,9 @@ def most_goals(players: list):
     top_scorer = max(players, key = lambda player: player.goals)
     return f"{top_scorer.name}"
 
-
+def most_points(players: list):
+    top_scorer = max(players, key = lambda player: player.goals + player.passes)
+    return top_scorer.name, top_scorer.number
     
 #testing
 if __name__ == "__main__":
