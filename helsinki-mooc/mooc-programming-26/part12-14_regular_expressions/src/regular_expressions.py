@@ -8,7 +8,14 @@ def is_dotw(my_string: str):
     return False
 
 
+def all_vowels(my_string: str):
+    expression = "^[aeiou]*$"
+    if re.search(expression, my_string):
+        return True
+    return False
+
+
+
 #testing
-print(is_dotw("Mon"))
-print(is_dotw("Fri"))
-print(is_dotw("Tui"))
+print(all_vowels("eioueioieoieou"))
+print(all_vowels("autoooo"))
