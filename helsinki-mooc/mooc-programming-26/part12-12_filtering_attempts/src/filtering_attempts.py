@@ -12,9 +12,16 @@ def accepted(attempts: list):
     accepted = list(filter(lambda attempt: attempt.grade >= 1, attempts))
     return accepted
 
-s1 = CourseAttempt("Peter Python", "Introduction to Programming", 3)
-s2 = CourseAttempt("Olivia C. Objective", "Introduction to Programming", 5)
-s3 = CourseAttempt("Peter Python", "Advanced Course in Programming", 0)
+def attempts_with_grade(attempts: list, grade: int):
+    target = list(filter(lambda attempt: attempt.grade == grade, attempts))
+    return target
+    
 
-for attempt in accepted([s1, s2, s3]):
-    print(attempt)
+if __name__ == "__main__":
+    s1 = CourseAttempt("Peter Python", "Introduction to Programming", 3)
+    s2 = CourseAttempt("Olivia C. Objective", "Introduction to Programming", 5)
+    s3 = CourseAttempt("Peter Python", "Advanced Course in Programming", 0)
+    s4 = CourseAttempt("Olivia C. Objective", "Data Structures and Algorithms", 3)
+
+    for attempt in attempts_with_grade([s1, s2, s3, s4], 3):
+        print(attempt)
