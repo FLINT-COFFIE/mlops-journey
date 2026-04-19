@@ -8,3 +8,6 @@ class CourseAttempt:
         return f"{self.student_name}, grade for the course {self.course_name} {self.grade}"
 
 # Write your solution here
+def names_of_students(attempts: list):
+    completed = list(map(lambda x: x.name, attempts))
+    return completed
