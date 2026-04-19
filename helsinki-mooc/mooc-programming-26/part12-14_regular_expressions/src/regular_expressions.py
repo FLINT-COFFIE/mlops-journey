@@ -15,7 +15,16 @@ def all_vowels(my_string: str):
     return False
 
 
+def time_of_day(my_string: str):
+    expression = "^([01]\d|2[0-3]):[0-5]\d:[0-5]\d"
+    if re.search(expression, my_string):
+        return True
+    return False
 
-#testing
-print(all_vowels("eioueioieoieou"))
-print(all_vowels("autoooo"))
+
+if __name__ == "__main__":
+    #testing
+    print(time_of_day("12:43:01"))
+    print(time_of_day("AB:01:CD"))
+    print(time_of_day("17:59:59"))
+    print(time_of_day("33:66:77"))
