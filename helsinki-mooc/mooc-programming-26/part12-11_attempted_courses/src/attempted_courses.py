@@ -9,5 +9,21 @@ class CourseAttempt:
 
 # Write your solution here
 def names_of_students(attempts: list):
-    completed = list(map(lambda x: x.name, attempts))
+    completed = list(map(lambda student: student.student_name, attempts))
     return completed
+
+def course_names(attempts: list):
+    courses = list(set(map(lambda course: course.course_name, attempts)))
+    return courses
+
+#testing
+if __name__ == "__main__":
+    s1 = CourseAttempt("Peter Python", "Introduction to Programming", 3)
+    s2 = CourseAttempt("Olivia C. Objective", "Introduction to Programming", 5)
+    s3 = CourseAttempt("Peter Python", "Advanced Course in Programming", 2)
+
+    for name in names_of_students([s1, s2, s3]):
+        print(name)
+        
+    for name in course_names([s1, s2, s3]):
+        print(name)
