@@ -16,6 +16,11 @@ def attempts_with_grade(attempts: list, grade: int):
     target = list(filter(lambda attempt: attempt.grade == grade, attempts))
     return target
     
+def passed_students(attempts: list, course: str):
+    passed = filter(lambda attempt: attempt.grade >= 1 and attempt.course_name == course, attempts)
+    #passed_course = list(filter(lambda attempt: attempt.course_name == course, passed))
+    return sorted(list(map(lambda a : a.student_name, passed)))
+
 
 if __name__ == "__main__":
     s1 = CourseAttempt("Peter Python", "Introduction to Programming", 3)
@@ -23,5 +28,5 @@ if __name__ == "__main__":
     s3 = CourseAttempt("Peter Python", "Advanced Course in Programming", 0)
     s4 = CourseAttempt("Olivia C. Objective", "Data Structures and Algorithms", 3)
 
-    for attempt in attempts_with_grade([s1, s2, s3, s4], 3):
+    for attempt in passed_students([s1, s2, s3, s4], "Introduction to AI"):
         print(attempt)
