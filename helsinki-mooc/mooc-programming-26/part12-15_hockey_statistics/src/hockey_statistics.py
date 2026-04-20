@@ -17,27 +17,25 @@ class Player:
     def __str__(self):
         return f"{self.name:21}{self.team:5}{self.goals:>2} + {self.assists:>2} = {self.points:>3}"
         
-class hockey_statistics_app:
+class HockeyStatisticsApp:
     def __init__(self):
         self.players = []
         
     def load_data(self):
-        filename = input("Enter the file name: ")
-        try:
-            with open(filename) as file:
-                data = json.load(file)
-                for player in data:
-                    self.players.append(Player(**player))
-            print(f"read the data of {len(self.players)} players")
-        except FileNotFoundError:
-            print("File not found")
+        filename = input("file name: ")
+        with open(filename) as file:
+            data = json.load(file)
+            for player in data:
+                self.players.append(Player(**player))
+        print(f"read the data of {len(self.players)} players")
+            
             
     def execute(self):
         self.load_data()
         
         print("\ncommands:\n")
         print("0 quit")
-        print("1 search")
+        print("1 search for player")
         print("2 teams")
         print("3 countries")
         print("4 players in team")
@@ -69,13 +67,13 @@ class hockey_statistics_app:
                     
             elif command == "4":
                 team = input("team: ")
-                matching_players = sorted(list(filter(lambda p: p.team == team, self.players)))
+                matching_players = [p for p in self.players if p.team == team]
                 for player in sorted(matching_players, key = lambda p: p.points, reverse=True):
                     print(player)
             
             elif command == "5":
                 country = input("country: ")
-                matching_players = sorted(list(filter(lambda p: p.nationality == country, self.players)))
+                matching_players = [p for p in self.players if p.nationality == country]
                 for player in sorted(matching_players, key = lambda p: p.points, reverse=True):
                     print(player)
             
@@ -90,6 +88,8 @@ class hockey_statistics_app:
                 top_scorers = sorted(self.players, key=lambda p: (p.goals, -p.games), reverse=True)
                 for i in range(number):
                     print(top_scorers[i])
-                    
-app = hockey_statistics_app()
+  
+
+                 
+app = HockeyStatisticsApp()
 app.execute()
