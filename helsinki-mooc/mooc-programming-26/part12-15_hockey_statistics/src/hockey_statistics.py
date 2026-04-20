@@ -15,7 +15,7 @@ class Player:
         
         
     def __str__(self):
-        print(f"{self.name:21}{self.team:5}{self.goals} + {self.assists} = {self.points}")
+        return f"{self.name:21}{self.team:5}{self.goals:>2} + {self.assists:>2} = {self.points:>3}"
         
 class hockey_statistics_app:
     def __init__(self):
@@ -46,7 +46,7 @@ class hockey_statistics_app:
         print("7 most goals\n")
         
         while True:
-            command = "command: "
+            command = input("command: ")
             
             if command == "0":
                 break
@@ -58,7 +58,7 @@ class hockey_statistics_app:
                         print(player)
             
             elif command == "2":
-                team = sorted(list(set(p.team for p in self.players)))
+                teams = sorted(list(set(p.team for p in self.players)))
                 for team in teams:
                     print(team)
                     
@@ -70,14 +70,26 @@ class hockey_statistics_app:
             elif command == "4":
                 team = input("team: ")
                 matching_players = sorted(list(filter(lambda p: p.team == team, self.players)))
-                for player in matching_players:
+                for player in sorted(matching_players, key = lambda p: p.points, reverse=True):
                     print(player)
             
             elif command == "5":
                 country = input("country: ")
-                matching_players = sorted()
+                matching_players = sorted(list(filter(lambda p: p.nationality == country, self.players)))
+                for player in sorted(matching_players, key = lambda p: p.points, reverse=True):
+                    print(player)
+            
+            elif command == "6":
+                number = int(input("How many: "))
+                top_players = sorted(self.players, key=lambda p: (p.points, p.goals), reverse=True)
+                for i in range(number):
+                    print(top_players[i])
                     
-                    
+            elif command == "7":
+                number = int(input("How many: "))
+                top_scorers = sorted(self.players, key=lambda p: (p.goals, -p.games), reverse=True)
+                for i in range(number):
+                    print(top_scorers[i])
                     
 app = hockey_statistics_app()
 app.execute()
