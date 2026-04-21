@@ -28,8 +28,20 @@ while True:
     window.blit(robot, (x, y))
     pygame.display.flip()
     
-    if y < max_y and x == max_x:
+    #Top left
+    if y <= 0 and x < max_x:
+        x += velocity
+        
+    #Top Right
+    elif x >= max_x and y < max_y:
         y += velocity
         
-
+    #Bottom Right
+    elif y >= max_y and x > 0:
+        x -= velocity
+    
+    #Bottom Left
+    elif x <= 0 and y > 0:
+        y -= velocity
+    
     clock.tick(60)
