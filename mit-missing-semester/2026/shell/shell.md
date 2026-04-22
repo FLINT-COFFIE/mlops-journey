@@ -37,3 +37,9 @@ otherwise it'll run but you'll have no feedback
 ## 9. saved and run the script
 use chmod +x filename to make it executable and ./filename to run it
 
+## 10. adding set -x 
+adding set -x to the script prints out each line of commands before they are run.
+
+## 11. Backing up a file
+The cp command copies a file.
+
