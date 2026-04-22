@@ -22,3 +22,18 @@ stder is error messages
 
 use the &> to move them to one file.
 
+## 6 Executing if one fails
+|| runs if the first command fails
+cd tmp/mydir || (mkdir tmp/mydir && cd tmp/mydir)
+
+## 7. CD
+cd is built in because the shell is changing directories internally other wise the external cd will change if it was not in built and you'll be stuck in your dir forever.
+
+## 8. testing 
+use tesf -f or [ -f ...]
+test -d mydir && echo "it exists" 
+otherwise it'll run but you'll have no feedback
+
+## 9. saved and run the script
+use chmod +x filename to make it executable and ./filename to run it
+
