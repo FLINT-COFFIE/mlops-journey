@@ -43,3 +43,5 @@ adding set -x to the script prints out each line of commands before they are run
 ## 11. Backing up a file
 The cp command copies a file.
 
+## 12. $1 or $@
+Putting one of these in place of the file name in the script make the argument you pass the basis for the script.

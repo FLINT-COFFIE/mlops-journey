@@ -1,2 +1,2 @@
 set -x
-test -d mydir && echo "it exists"
+test -d $1 && echo "$1 exists"
