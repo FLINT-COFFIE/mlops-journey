@@ -1,0 +1,13 @@
+ls: cannot access '/nonexistent': No such file or directory
+/tmp:
+gitkraken
+pyright-1050-OE6q7xy0kATX
+python-languageserver-cancellation
+remote-wsl-loc.txt
+snap-private-tmp
+ssh-XXXXXXam6p1l
+systemd-private-c942011cc38042ee8f39d36a980a9476-systemd-logind.service-J5kX4N
+systemd-private-c942011cc38042ee8f39d36a980a9476-systemd-resolved.service-b4MRow
+systemd-private-c942011cc38042ee8f39d36a980a9476-systemd-timesyncd.service-BDjD7c
+vscode-distro-env.8A1t0s
+vscode-distro-env.WqhGoW
