@@ -45,3 +45,8 @@ The cp command copies a file.
 
 ## 12. $1 or $@
 Putting one of these in place of the file name in the script make the argument you pass the basis for the script.
+
+## 13. Finding the top 5 extensions in home dir.
+find . -type f | grep -oE '\.[a-zA-Z0-9]+$' | sort | uniq -c | sort -nr | head -n 5
+
+find all files pipe it and grab .extensions of any kind sort them and count them uniquely and sort again in reverse and print first 5
