@@ -65,4 +65,10 @@ jq must be installed first.
 curl -s https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json | jq '.[] | .name'
 to get the list of names
 
+curl -s https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json | jq '.[] | select(.version > 6) | .name, .version'
+to get the names of those with versions > 6 
+the , and .version adds the accompanying version number.
 
+## 17. Filtering Lines
+printf 'a 50 x\nb 150 y\nc 200 z\n' | awk '$2 > 100'
+awk takes the data and returns those with middle column > 100:
