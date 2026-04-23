@@ -75,6 +75,7 @@ Started: January 8, 2026
 
 
 ## TODO:
-- [ ] Complete Helsinki Python MOOC
+- [x] Complete Helsinki Python MOOC
 - [ ] Finish MIT Missing Semester
+
 
