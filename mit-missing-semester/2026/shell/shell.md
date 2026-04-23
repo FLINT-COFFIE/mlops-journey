@@ -72,3 +72,12 @@ the , and .version adds the accompanying version number.
 ## 17. Filtering Lines
 printf 'a 50 x\nb 150 y\nc 200 z\n' | awk '$2 > 100'
 awk takes the data and returns those with middle column > 100:
+
+## 18. Finding my most used commands
+cat ~/.bash_history | awk '{print $1}' | sort | 
+uniq -c | sort -nr | head -n 5
+    672 git
+    572 cd
+    392 /usr/bin/python3
+    115 ts
+     72 tt
