@@ -13,3 +13,6 @@ ls to list the files and -lsht to list all, size and time.
 printenv shows environment variables that are passed down to subprocesses
 
 export unveils these builtin processes so subprocesses jave access to it.
+
+## Environment Variables
+1. Marco Polo
