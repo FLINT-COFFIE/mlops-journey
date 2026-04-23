@@ -50,3 +50,19 @@ Putting one of these in place of the file name in the script make the argument y
 find . -type f | grep -oE '\.[a-zA-Z0-9]+$' | sort | uniq -c | sort -nr | head -n 5
 
 find all files pipe it and grab .extensions of any kind sort them and count them uniquely and sort again in reverse and print first 5
+
+## 14. finding files with spaces in file names
+find . -type f -name "*.sh" -print0 | xargs -0 -l
+
+## 15. Curl
+curl -s https://missing.csail.mit.edu/ | grep -E "[0-9]{1,2}/[0-9]{1,2}/[0-9]{2,4}"
+
+curl -s removes the progress bar
+
+## 16. Jq
+A json data file processor
+jq must be installed first.
+curl -s https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json | jq '.[] | .name'
+to get the list of names
+
+
