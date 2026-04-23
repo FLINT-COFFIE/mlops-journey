@@ -26,3 +26,9 @@ they all share the same source file thats how.
 1. Used the while loop to run till failure and kept the count. one script to keep the main script and one to run the main script
 
 ## Signals and Job Control
+1. started a sleep job sleep 10000
+used ctrl -z to background it and continue its execution with bg
+used pgrep sleep -af to find it 
+used pkill sleep -e to identify what's terminated
+
+2. 
