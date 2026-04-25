@@ -75,7 +75,10 @@ Started: January 8, 2026
 
 
 ## TODO:
+### PHASE 1
 - [x] Complete Helsinki Python MOOC
-- [ ] Finish MIT Missing Semester
+- [x] Finish MIT Missing Semester
+- [ ] Complete SQL Zoo
+- [ ] Complete Docker Curriculum
 
 
