@@ -42,3 +42,12 @@ SELECT name FROM world WHERE name LIKE '_t%'
 
 --Q9: Find the countries that have two "o" characters separated by two others.
 SELECT name FROM world WHERE name LIKE '%o__o%'
+
+--Q10: Find the countries that have exactly four characters.
+SELECT name FROM world WHERE name LIKE '____'
+
+-- OPTIONAL HARDER QUESTIONS
+
+--Q1 Find the country where the name is the capital city.
+SELECT name FROM world WHERE name in country
+
