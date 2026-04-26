@@ -31,3 +31,8 @@ SELECT name FROM world WHERE name LIKE '%land'
 --Q5: Find the countries that end with land
 SELECT name FROM world WHERE name LIKE 'C%ia'
 
+--Q6: Find the country that has oo in the name
+SELECT name FROM world WHERE name LIKE '%oo%'
+
+--Q7: Find the countries that have three or more a in the name
+SELECT name FROM world WHERE name LIKE '%a%a%a%'
