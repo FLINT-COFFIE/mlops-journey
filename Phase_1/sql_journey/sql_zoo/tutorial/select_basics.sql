@@ -9,9 +9,21 @@ SELECT population FROM world WHERE name = 'Germany';
 SELECT name, population FROM world WHERE name in ("Sweden", "Norway", "Denmark");
 
 -- Q3: Show the country and the area for countries with an area between 200,000 and 250,000.
+SELECT name, area FROM world WHERE area BETWEEN 200000 and 250000
 
 
+-- ###########################
+-- PATTERN MATCHING WITH LIKE
+-- ###########################
 
--- ############################################
--- NEXT TOPIC: ...
--- ############################################
+-- Q1: Find the country that start with Y
+SELECT name FROM world WHERE name LIKE 'Y%'
+
+-- Q2: Find the country that end with Y
+SELECT name FROM world WHERE name LIKE '%Y'
+
+-- Q3: Find the countries that contain the letter x
+SELECT name FROM world WHERE name LIKE '%x%'
+
+--Q4: Find the countries that end with land
+SELECT name FROM world WHERE name LIKE '%land'
