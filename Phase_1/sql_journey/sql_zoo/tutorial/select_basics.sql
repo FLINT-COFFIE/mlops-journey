@@ -63,5 +63,8 @@ SELECT capital, name from world WHERE capital like concat(name,"_", "%")
 --Q5 Show the name and the extension where the capital is a proper (non-empty) extension of name of the country.
 SELECT name, from world WHERE capital like concat(name,"-", "%")
 
---Q6 Find the capital and the name where the capital is an extension of name of the country.
-SELECT capital, name from world WHERE capital like concat(name,"_", "%")
+--Q6 Show the name and the extension where the capital is a proper (non-empty) extension of name of the country.
+SELECT name, replace(capital , name, "" ) from world WHERE capital like concat(name,"_", "%")
+
+-- NB: concat combines words
+--     replace takes the first string and replaces the second instance of the string with the third.
