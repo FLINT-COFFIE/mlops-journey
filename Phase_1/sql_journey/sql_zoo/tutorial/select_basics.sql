@@ -27,3 +27,7 @@ SELECT name FROM world WHERE name LIKE '%x%'
 
 --Q4: Find the countries that end with land
 SELECT name FROM world WHERE name LIKE '%land'
+
+--Q5: Find the countries that end with land
+SELECT name FROM world WHERE name LIKE 'C%ia'
+
