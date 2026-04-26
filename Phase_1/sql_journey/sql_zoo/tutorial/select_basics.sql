@@ -51,3 +51,5 @@ SELECT name FROM world WHERE name LIKE '____'
 --Q1 Find the country where the name is the capital city.
 SELECT name FROM world WHERE name in country
 
+--Q2 Find the country where the name is the capital city.
+SELECT name FROM world WHERE capital like name
