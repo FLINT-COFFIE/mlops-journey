@@ -39,3 +39,6 @@ SELECT name FROM world WHERE name LIKE '%a%a%a%'
 
 --Q8: Find the countries that have "t" as the second character.
 SELECT name FROM world WHERE name LIKE '_t%'
+
+--Q9: Find the countries that have two "o" characters separated by two others.
+SELECT name FROM world WHERE name LIKE '%o__o%'
