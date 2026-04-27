@@ -68,3 +68,14 @@ SELECT name, replace(capital , name, "" ) from world WHERE capital like concat(n
 
 -- NB: concat combines words
 --     replace takes the first string and replaces the second instance of the string with the third.
+
+
+-- ###########################
+-- SELECTING FROM WORLD
+-- ###########################
+
+--Q1 selecting name continent and population
+SELECT name, continent, population FROM world
+
+--Q2 Large questions
+SELECT name FROM world WHERE population >= 200000000
