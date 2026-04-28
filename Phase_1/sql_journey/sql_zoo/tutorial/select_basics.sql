@@ -91,3 +91,9 @@ SELECT name, population FROM world WHERE name in ("France", "Germany", "Italy")
 
 --Q6 Show the countries which have a name that includes the word 'United'
 SELECT name from world WHERE name LIKE "%United%"
+
+--Q7 Show the countries that are big by area or big by population. Show name, population and area.
+SELECT name, population, area FROM world WHERE area > 3000000   OR population > 250000000
+
+--Q8 Exclusive OR (XOR). Show the countries that are big by area (more than 3 million) or big by population (more than 250 million) but not both. Show name, population and area.
+SELECT name, population, area FROM world WHERE area > 3000000   XOR population > 250000000
