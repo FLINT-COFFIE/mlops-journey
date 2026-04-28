@@ -109,3 +109,12 @@ SELECT name, capital FROM world WHERE LENGTH(name) = LENGTH(capital)
 
 --Q12 Show the name and the capital where the first letters of each match. Don't include countries where the name and the capital are the same word.
 SELECT name, capital FROM world WHERE LEFT(name,1) = LEFT(capital,1) AND name <> capital
+
+--Q13 Find the country that has all the vowels and no spaces in its name.
+SELECT name FROM world WHERE 
+name LIKE "%a%" AND
+name LIKE "%e%" AND
+name LIKE "%i%" AND
+name LIKE "%o%" AND
+name LIKE "%u%" AND
+name NOT LIKE "% %"
