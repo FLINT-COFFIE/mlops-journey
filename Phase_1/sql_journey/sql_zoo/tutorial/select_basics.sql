@@ -88,3 +88,6 @@ SELECT name, population/1000000 FROM world WHERE continent = "South America"
 
 --Q5 Show the name and population for France, Germany, Italy
 SELECT name, population FROM world WHERE name in ("France", "Germany", "Italy")
+
+--Q6 Show the countries which have a name that includes the word 'United'
+SELECT name from world WHERE name LIKE "%United%"
