@@ -142,4 +142,8 @@ SELECT yr,subject,winner FROM nobel WHERE subject = "literature" and yr BETWEEN 
 SELECT * FROM nobel
 WHERE winner IN ("Theodore Roosevelt", "Thomas Woodrow Wilson","Jimmy Carter","Barack Obama")
 
---Q7
+--Q7 Show the winners with first name John
+SELECT winner FROM nobel WHERE winner LIKE "John%"
+
+--Q8 Show the year, subject, and name of physics winners for 1980 together with the chemistry winners for 1984.
+SELECT yr, subject, winner FROM nobel WHERE (subject = "physics" AND yr = 1980) OR (subject = "chemistry" AND yr = 1984)
