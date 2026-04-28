@@ -118,3 +118,15 @@ name LIKE "%i%" AND
 name LIKE "%o%" AND
 name LIKE "%u%" AND
 name NOT LIKE "% %"
+
+-- ###########################
+-- SELECTING FROM NOBEL
+-- ###########################
+
+--Q1 Nobel prizes for 1950.
+SELECT yr, subject, winner FROM nobel WHERE yr = 1950
+
+--Q2 Show who won the 1962 prize for literature.
+SELECT winner FROM nobel WHERE yr = 1962 AND subject = 'LITERATURE'
+
+--Q3 
