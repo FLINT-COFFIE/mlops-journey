@@ -160,4 +160,9 @@ SELECT yr, subject, winner FROM nobel WHERE (subject = "Medicine" AND yr < 1910)
 --Q1 Find all details of the prize won by PETER GRÜNBERG
 SELECT * FROM nobel where winner = "PETER GRÜNBERG"
 
---Q2 
+--Q2 Escaping single quotes
+SELECT * FROM nobel where winner = "EUGENE O'NEILL"
+
+--Q3 List the winners, year and subject where the winner starts with Sir. Show the the most recent first, then by name order.
+SELECT winner, yr, subject FROM nobel WHERE winner LIKE "Sir%" 
+ORDER BY yr DESC, winner
