@@ -39,7 +39,7 @@ Started: January 8, 2026
 
   * **Interactive Resources:**
       * **The Math Sprint:** [Khan Academy: Linear Algebra](https://www.khanacademy.org/math/linear-algebra) + [3Blue1Brown: Essence of Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr).
-      * **Infrastructure (IaC):** [Piyush Sachdeva: Terraform for AWS](https://www.google.com/search?q=https://www.youtube.com/playlist%3Flist%3DPLdpzxOOAlwvI0O4T3jnwBksJ1tLq0UqK1).
+      * **Infrastructure (IaC):** [Piyush Sachdeva: Terraform for AWS](https://github.com/piyushsachdeva/Terraform-Full-Course-Aws).
       * **Data in Motion:** [Confluent Kafka Hands-on Labs](https://developer.confluent.io/get-started/python/).
   * **🏗 Q2 Project: The "Terraformed" Rig Stream.** \* Use Terraform to provision an AWS VPC and an EC2 instance. Deploy a Kafka broker. Write a Python producer to stream simulated reservoir pressure data.
   * **Definition of Done (DoD):** \* Infrastructure is "disposable"—you can destroy and rebuild it with `terraform destroy` and `terraform apply`.
