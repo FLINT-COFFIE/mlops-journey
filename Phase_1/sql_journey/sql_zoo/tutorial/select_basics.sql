@@ -135,4 +135,5 @@ SELECT yr, subject FROM nobel WHERE winner = "Albert Einstein"
 --Q4 Give the name of the 'Peace' winners since the year 2000, including 2000.
 SELECT winner FROM nobel WHERE subject LIKE "%PEACE%" AND yr >= 2000
 
---Q5 
+--Q5 Show all details (yr, subject, winner) of the literature prize winners for 1980 to 1989 inclusive.
+SELECT yr,subject,winner FROM nobel WHERE subject = "literature" and yr BETWEEN 1980 AND 1989
