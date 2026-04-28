@@ -106,3 +106,6 @@ SELECT name, ROUND(GDP/population, -3) FROM world where GDP > 1E12
 
 --Q11 Show the name and capital where the name and the capital have the same number of characters.
 SELECT name, capital FROM world WHERE LENGTH(name) = LENGTH(capital) 
+
+--Q12 Show the name and the capital where the first letters of each match. Don't include countries where the name and the capital are the same word.
+SELECT name, capital FROM world WHERE LEFT(name,1) = LEFT(capital,1) AND name <> capital
