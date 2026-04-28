@@ -103,3 +103,6 @@ SELECT name, ROUND(population/1000000, 2), ROUND(GDP/1000000000, 2) FROM world W
 
 --Q10 Show the name and per-capita GDP for those countries with a GDP of at least one trillion (1000000000000; that is 12 zeros). Round this value to the nearest 1000.
 SELECT name, ROUND(GDP/population, -3) FROM world where GDP > 1E12
+
+--Q11 Show the name and capital where the name and the capital have the same number of characters.
+SELECT name, capital FROM world WHERE LENGTH(name) = LENGTH(capital) 
