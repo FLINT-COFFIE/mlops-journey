@@ -10,3 +10,6 @@ SELECT name, continent FROM world WHERE continent IN (SELECT continent FROM worl
 
 --Q4 Which country has a population that is more than United Kingdom but less than Germany? Show the name and the population.
 SELECT name, population FROM world WHERE population > (SELECT population FROM world WHERE name = "United Kingdom") AND population < (SELECT population FROM world WHERE name = "Germany")
+
+--Q5 Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.
+SELECT name, CONCAT(ROUND((population * 100) / (SELECT population FROM world WHERE name = 'Germany'), 0), "%") FROM world WHERE  continent = "Europe"
