@@ -35,3 +35,11 @@ SELECT continent, COUNT(name) FROM world WHERE population >= 10000000 GROUP BY c
 -- List the continents that have a total population of at least 100 million.
 SELECT continent FROM world WHERE population >= 100000000 GROUP BY continent
 
+
+-- The Join Operation
+
+-- Modify it to show the matchid and player name for all goals scored by Germany. To identify German players, check for: teamid = 'GER'
+SELECT matchid, player FROM goal WHERE teamid = 'GER'
+
+-- Show id, stadium, team1, team2 for just game 1012
+SELECT id,stadium,team1,team2 FROM game WHERE id = 1012
