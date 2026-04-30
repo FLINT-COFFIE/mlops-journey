@@ -102,3 +102,31 @@ WHERE name = 'Glenn Close'
 -- What is the id of the 1942 film 'Casablanca'
 SELECT id FROM movie 
 WHERE title = 'Casablanca' AND yr = 1942
+
+-- Obtain the cast list for the film 'Alien'
+SELECT name
+FROM actor
+JOIN casting ON actorid = actor.id
+JOIN movie ON movieid = movie.id
+WHERE title = "Alien"
+
+-- List the films in which 'Harrison Ford' has appeared
+SELECT title
+FROM actor
+JOIN casting ON actorid = actor.id
+JOIN movie ON movieid = movie.id
+WHERE name = "Harrison Ford"
+
+-- List the films where 'Harrison Ford' has appeared - but not in the starring role. [Note: the ord field of casting gives the position of the actor. If ord=1 then this actor is in the starring role]
+SELECT title
+FROM actor
+JOIN casting ON actorid = actor.id
+JOIN movie ON movieid = movie.id
+WHERE name = "Harrison Ford" AND ORD != 1
+
+-- List the films together with the leading star for all 1962 films.
+SELECT title, name
+FROM actor
+JOIN casting ON actorid = actor.id
+JOIN movie ON movieid = movie.id
+WHERE ORD = 1 AND yr = 1962
