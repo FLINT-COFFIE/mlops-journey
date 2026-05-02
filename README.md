@@ -80,7 +80,7 @@ Started: January 8, 2026
 - [x] Finish MIT Missing Semester
 - [x] Complete SQL Zoo
 - [ ] Complete Docker Curriculum
-- Complete google career certs
+- [ ] Complete google career certs
 - [x] Google python for data analysis
 
 
